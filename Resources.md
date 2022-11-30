@@ -7,3 +7,7 @@
 - [L1 vs L2: Entering The Endgame](https://members.delphidigital.io/reports/l1-vs-l2-entering-the-endgame/) by [Can Gurel](https://twitter.com/CannnGurel)
 - [Celestia — The Foundation of a Modular Blockchain World](https://medium.com/@Jon_Charbonneau/celestia-the-foundation-of-a-modular-blockchain-world-95900fe2cfb0) by [Jon Charbonneau](https://twitter.com/jon_charb)
 - [Fuel Resources](https://github.com/FuelLabs/awesome-fuel) - maintained and comprehensive list of awesome Fuel resources
+
+## Fuel Dapp:
+- [Fuel Dapp Example](https://github.com/luizstacio/fuel-dapp-example)
+- [Fuel Developer Quickstart](https://fuellabs.github.io/fuel-docs/master/developer-quickstart.html)
