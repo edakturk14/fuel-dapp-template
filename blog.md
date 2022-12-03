@@ -1,8 +1,9 @@
 # Modular Blockchains & Building on Fuel
 
 TLDR:
-- Modular blockchains present a new architectural design by decoupling consensus from execution. This allows each layer to specalize for the fucntion they provide.
--
+- Modular blockchains present a new architectural design by decoupling the core functions of a blockchains. This creates a new design where each layer can specalize for the function they provide.
+- Fuel is building the fastest executions layer for the modular blockchain paradigm.
+- Fuel is building the full suite of developer products, from a new language (sway) to the fuel orcehctrator (forc), to provide developers the best experince.
 
 I've been learning a lot about Modular Blockchains. As an app developer, the protocol layer is not something I spend most of my time researching; however, the need for scalability becomes very clear, especially if you've made any transaction on Ethereum mainnet. Unfortunately, the costs are high, and the transactions are slow, especially during peak times.
 
@@ -14,6 +15,7 @@ In this post I want to talk about:
 - How to write a dApp on Fuel
 
 ---
+
 ## Introduction to Modular Blockchains
 
 ### Blockchain Scalability
@@ -71,7 +73,7 @@ Another core layer is the execution layer, thats where Fuel comes in. It's the m
 
 Fuel is the fastest execution layer for modular blockchains. In the modular blockchain, the execution, data availability and consensus are separate layers, and Fuel is the execution layer.
 
-#### Why Fuel
+#### Fuel Features
 
 Let's talk about some of Fuel's core pillars:
 1. **Parallel transaction execution**: Most blockchains are single-threaded, meaning that only one thread is executed simultaneously. Fuel uses a UTXO model, which allows for parallel execution; this way, it can execute more threads simultaneously.
