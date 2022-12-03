@@ -28,10 +28,10 @@ Modular blockchains promise to provide exponential scalability to smart contract
 
 In its core a blockchain provides 3 functions: **consensus**, **execution** and **data availability**. We can think of these core functions as 3 layers that make up the blockchain.
 
-1. **Consensus**: Orders transactions, ensures that all nodes have the same state (example: PoW, PoS)
+1. **Consensus**: Orders transactions, ensures that all nodes have the same state. The consensus protocol defines the rules on how transactions are ordered and how new blocks are added (example: PoW, PoS).
 2. **Execution**: Processes transactions and changes the state of the blockchain (eg: when Alice sends 1ETH to Bob, the state of the blockchain needs to be updated)
-3. **[Data availability](https://coinmarketcap.com/alexandria/article/what-is-data-availability)**: Ensures data is available
-4. *(Optional)* **Settlement**: Dispute resolution
+3. **[Data availability](https://coinmarketcap.com/alexandria/article/what-is-data-availability)**: Ensures data is available. When new blocks are added, the data must be avaliable upon requests.
+4. *(Optional)* **Settlement**: Dispute resolution. This is how the blockchain determines valid transactions.
 
 #### Monolithic Blockchains
 
@@ -45,35 +45,31 @@ Alongside the high hardware requirements, monolotic blockchains present limited 
 
 #### Modular Blockchains
 
-Contrasting to the monolithic architecture, in a modular blockchain there are distinct specialized layer(s) for the core fuctions. In other words, a modular blockchain outsources one or more of the core features to another chain.
+Contrasting to the monolithic architecture, in a modular blockchain there are distinct specialized layer(s) for the core fuctions. In other words, a modular blockchain outsources one or more of the core features to another chain. Each layer only handles a few specialized tasks, and they must do it well.
 
 [image - modular vs. monolotic architecture]
 
-Having seperate layers provides scalability and flexibility to the blockchain.
-- Scalability: Modular blockchains are more scalable because resources are separated. Each layer of the stack is specialized for a specific function. The layer can optimize the resources for the specific function, and so this would increase efficiency.
-- Flexibility: You're not limited to a particular set of resources but can choose the layers that best fit your use case. (For example, in AWS, spinning up an EC2 machine, you have many different options. There are no one size fits; likewise, you can pick the execution layer that fits your use case.)
+Having seperate layers provides **scalability** and **flexibility** to the blockchain.
+- **Scalability**: Modular blockchains are more scalable because resources are separated. Each layer of the stack is specialized for a specific function. The layer can optimize the resources for the specific function, and so this would increase efficiency.
+- **Flexibility**: You're not limited to a particular set of resources but can choose the layers that best fit your use case. (For example, in AWS, spinning up an EC2 machine, you have many different options. There are no one size fits; likewise, you can pick the execution layer that fits your use case.)
 
 Modular blockchain architecture is similar to how virtual machines and cloud computing changed traditional web architecture. Instead of being limited by the resources of your own machine, now you can leverage other resources to scale up. As Nader puts it in his [post](https://nader.substack.com/p/blockchain-modularity-a-mental-model):
 
 > Instead of deploying your application to the same blockchain as everyone else, you can deploy your own chain while still leveraging the same consensus layer so it can also share block space and security.
 
-##### Drawbacks of Modular Blockchains
+###  Modular Blockchain Platforms: Ethereum, Celestia & Fuel
 
-Worth mentioning some of the drawbacks of the modular blockchain architecture as well, first of all ist a new technology. It's always a challenge to bootstrap a new developer ecosystem. You need the tooling, community, and educators. There's a lot of room for new educators, app developer and researchers to join and enhance the ecosystem. It's also pretty complex, there are different views amonst blockchain communities on the end-game for blockchain scalability. My humble opinon is that its one of the most interesting and challenging technical debates which can actually bring blockchains to the masses.
+The Ethereum roadmap has been shifted to be modular with both becoming [rollup-centric](https://ethereum-magicians.org/t/a-rollup-centric-ethereum-roadmap/4698) and with sharding. [Rollups](https://ethereum.org/en/layer-2/#what-is-layer-2) are one of the best examples. A rollup will do the execution and then leave the consensus, data availability, and settlement for the Layer 1. That's how a Rollup can scale exponentially compared to L1. In the end, this is reflected by users as low-cost and faster transactions. Ethereum sharding is another modular approach thats been researched and worked on. Sharding is a method to distribute data across mutliple databases. You can read more about Ethereum sharding over [here](https://ethereum.org/en/upgrades/sharding/).
 
-### Ethereum, Celestia & Fuel
+[Celestia](https://celestia.org/) is the first blockchain pioneering the modular blockchain architecture. It's a minimal-layer 1 that provides data availability and consensus. Celestia orders data and makes it available but does not execute the transactions. Instead, the execution is outsourced to specialized execution layers like rollups. Celestia aims to solve the Data availability problem that blockchains face. I'll not be going deep into Celestia or the data availability problem. However, there are great resources from some giga-brains, which you can find below.
 
-The Ethereum roadmap has been shifted to be modular; some call it "semi-modular". Rollups are one of the best examples. A rollup will do the execution and then leave the consensus, data availability, and settlement for the L1. That's how they can scale exponentially compared to L1. In the end, this is reflected by users as low-cost and faster transactions.
-
-[Celestia](https://celestia.org/) is the first blockchain pioneering the modular blockchain architecture. Celestia is a minimal-layer 1 that provides data availability and consensus. It orders data and makes it available but does not execute the transactions. Instead, the execution is outsourced to specialized execution layers like rollups. Celestia aims to solve the Data availability problem that blockchains face. I'll not be going deep into Celestia or the data availability problem. However, there are great resources from some giga-brains, which you can find below.
-
-Another core layer is the execution layer, where Fuel network comes in. It's the more exciting part for me as an app developer since I can get hands-on and build apps.
+Another core layer is the execution layer, thats where Fuel comes in. It's the more exciting part for me as an app developer since I can get hands-on and build apps. We'll be talking about Fuel in the next section and start building.
 
 ---
 
 ## Getting started w/Fuel
 
-Fuel describes itself as the fastest execution layer for modular blockchains. In the modular blockchain, the execution, data availability and consensus are separate layers, and Fuel is the execution layer.
+Fuel is the fastest execution layer for modular blockchains. In the modular blockchain, the execution, data availability and consensus are separate layers, and Fuel is the execution layer.
 
 #### Why Fuel
 
