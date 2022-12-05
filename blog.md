@@ -93,7 +93,54 @@ Let's talk about some of Fuel's core pillars:
 
 ## Building on Fuel
 
-In this section, we'll be building a dApp on the Fuel network using Sway & Forc.
+In this section, we'll create and deploy a smart contract in Sway to the Fuel network and write a smaple frontend to interact with it.
+
+First, here are your go-to resources to learn more:
+- Sway Book: https://fuellabs.github.io/sway/latest
+- Rust SDK Book: https://fuellabs.github.io/fuels-rs/latest
+- TypeScript SDK: https://github.com/FuelLabs/fuels-ts
+
+## Tools:
+- **Fuel**: blockchain we’ll deploy the smart contract to. 
+- **Sway**: language for writing smart contracts on the FuelVM, inspired by Rust. 
+- **Fuel Orchestrator(Forc)**: package manager for Sway.  
+- **Fuel wallet CLI**: *please note that the wallet is under active development*
+
+## Installation & Setup:
+1. Install the Rust toolchain by following the steps [here](https://fuellabs.github.io/sway/v0.24.3/introduction/installation.html#dependencies)
+2.  Install the Fuel toolchain, you can find the steps [here](https://github.com/FuelLabs/fuelup)
+3. Install the beta-1 toolchain by the following command
+```
+run fuelup toolchain install beta-1 
+``` 
+You can check the toolchain by running the following command: ```fuelup show```
+4. Setup a fuel wallet and create your account by following the [steps](https://github.com/FuelLabs/forc-wallet#forc-wallet)
+Make sure to save the seed phrase and your address. We’ll be using the address to deploy the smart contract.
+5. Get some testnet tokens from the [faucet](https://faucet-beta-1.fuel.network/)  
+
+## Create & Deploy a Smart Contract in Sway to Fuel
+
+1. Create a project folder
+```
+mkdir fuel-contract
+``` 
+2. Create the smart contract
+```
+forc new counter-contract
+``` 
+- Forc.toml is the manifest file which defines the project metadata  
+- src/main.sw: sample smart contract 
+
+3. Let’s change main.sw as below. I’ve added the comments in the code to explain the code. TO_DO 
+
+4. In your fuel-contract folder run the command to build your contract:
+```
+forc build
+``` 
+You’ll see a new folder called ‘out’ which contains the JSON folders for the contract and the byte code.
+
+5. Time to deploy the contract. The deployer account will be the account which we created earlier.
+forc deploy --url https://node-beta-1.fuel.network/graphql --gas-price TO_DO
 
 ---
 
