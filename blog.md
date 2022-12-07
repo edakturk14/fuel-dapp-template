@@ -91,31 +91,58 @@ Let's talk about some of Fuel's core pillars:
 
 ---
 
-## Building on Fuel
+## Writing a smart contract in Sway & Deploying to the Fuel Network
 
-In this section, we'll create and deploy a smart contract in Sway to the Fuel network and write a smaple frontend to interact with it.
+Sway is the domain-specific language for writing smart contracts on the FuelVM, inspired by Rust. Fuel is the execution enviornment(blockchain) we'll be deploying to.
+
+The goal of this section is to:
+- Provide an overview of the tools needed to build on Fuel
+- Understand how to write and complile a smart contract in Sway
+- Interact with the a smart contract on Fuel with the Fuel Wallet
 
 First, here are your go-to resources to learn more:
 - Sway Book: https://fuellabs.github.io/sway/latest
 - Rust SDK Book: https://fuellabs.github.io/fuels-rs/latest
 - TypeScript SDK: https://github.com/FuelLabs/fuels-ts
-
+ 
 ## Tools:
-- **Fuel**: blockchain we’ll deploy the smart contract to. 
-- **Sway**: language for writing smart contracts on the FuelVM, inspired by Rust. 
-- **Fuel Orchestrator(Forc)**: package manager for Sway.  
+- **Fuel Orchestrator(Forc)**: package manager for Sway.
 - **Fuel wallet CLI**: *please note that the wallet is under active development*
+- **[Fuel Faucet](https://faucet-beta-1.fuel.network/)**
 
 ## Installation & Setup:
+
 1. Install the Rust toolchain by following the steps [here](https://fuellabs.github.io/sway/v0.24.3/introduction/installation.html#dependencies)
-2.  Install the Fuel toolchain, you can find the steps [here](https://github.com/FuelLabs/fuelup)
-3. Install the beta-1 toolchain by the following command
+
+2. The **Fuel toolchain** is required to compile Sway contracts and run them on the FuelVM. Install the Fuel toolchain by the command below, you can also find the steps [here](https://github.com/FuelLabs/fuelup)
+```
+$curl --proto '=https' --tlsv1.2 -sSf \
+https://fuellabs.github.io/fuelup/fuelup-init.sh | sh
+```
+ - Toolchain is a new terminology, it referes to an installation of the Fuel Orchestrator(forc) along with related plugins (like the fuel-core).
+ - `fuelup` is the official package manager for Fuel that installs The Fuel Toolchain, you can read more on the [fuelup docs](https://fuellabs.github.io/fuelup/master/index.html) and find some [example commands](https://fuellabs.github.io/fuelup/master/examples.html)
+
+Run the following to verify that toolchain was installed:
+ ```
+ fuelup --version
+ forc --version
+ fuel-core --version
+ ```
+
+3. The [beta-1 network](https://fuellabs.github.io/fuel-docs/master/networks/beta-1.html) is the first public Fuel testnet. Install the beta-1 toolchain by the following command
 ```
 run fuelup toolchain install beta-1 
 ``` 
-You can check the toolchain by running the following command: ```fuelup show```
+
+Verify the toolchain by running the following: 
+```
+fuelup show
+```
+- You can also build your own toolchain with fuelup, more on it [here](https://fuellabs.github.io/fuelup/master/concepts/toolchains.html)
+
 4. Setup a fuel wallet and create your account by following the [steps](https://github.com/FuelLabs/forc-wallet#forc-wallet)
 Make sure to save the seed phrase and your address. We’ll be using the address to deploy the smart contract.
+
 5. Get some testnet tokens from the [faucet](https://faucet-beta-1.fuel.network/)  
 
 ## Create & Deploy a Smart Contract in Sway to Fuel
