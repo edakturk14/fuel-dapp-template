@@ -152,6 +152,7 @@ Make sure to save the seed phrase and your address. We’ll be using the address
 forc new counter-contract
 ``` 
 Here's how the project folder looks like:
+```
 .
 ├── Cargo.toml
 ├── Forc.toml
@@ -159,6 +160,7 @@ Here's how the project folder looks like:
 │   └── main.sw
 └── tests
     └── harness.rs
+```
 
 - Forc.toml is the manifest file which defines the project metadata for Fuel
 - Cargo.toml is the manifest file for Rust's package manager, cargo
