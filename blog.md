@@ -147,27 +147,51 @@ Make sure to save the seed phrase and your address. We’ll be using the address
 
 ## Create & Deploy a Smart Contract in Sway to Fuel
 
-1. Create a project folder
-```
-mkdir fuel-contract
-``` 
-2. Create the smart contract
+1. Create a smart contract projectc
 ```
 forc new counter-contract
 ``` 
-- Forc.toml is the manifest file which defines the project metadata  
-- src/main.sw: sample smart contract 
+Here's how the project folder looks like:
+.
+├── Cargo.toml
+├── Forc.toml
+├── src
+│   └── main.sw
+└── tests
+    └── harness.rs
 
-3. Let’s change main.sw as below. I’ve added the comments in the code to explain the code. TO_DO 
+- Forc.toml is the manifest file which defines the project metadata for Fuel
+- Cargo.toml is the manifest file for Rust's package manager, cargo
+- src/main.sw: sample smart contract
+- tests folder contains the tests file
 
-4. In your fuel-contract folder run the command to build your contract:
+2. Let’s change main.sw as below. I’ve added the comments in the code to explain the code. 
+
+**TO_DO**
+
+*For this project we will not be looking into tests, you can use ```forc test``` to run tests on your smart contract.* 
+
+3. In the project folder run the command below to complile your contract:
+
 ```
 forc build
 ``` 
-You’ll see a new folder called ‘out’ which contains the JSON folders for the contract and the byte code.
 
-5. Time to deploy the contract. The deployer account will be the account which we created earlier.
+You'll see new folders created in the project repo:
+- **out:** A new folder called which contains the JSON files of the contract and the byte code.
+- **Forc.lock**: Contains the information about your dependencies (similar to cargo.lock). This file should not be manually edited and is generated after the build.
+
+4. We need a deployer account to deploy the contract, this is the account which we created earlier.
+
+5. Time to deploy the contract. There are a few different options to deploy the smart contract:
+- Use forc from the command line *We'll be using this option*
+- [RustSDK](https://github.com/FuelLabs/fuels-rs#deploying-a-sway-contract)
+- [TypeScriptSDK](https://github.com/FuelLabs/fuels-ts/#deploying-contracts)
+
+```
 forc deploy --url https://node-beta-1.fuel.network/graphql --gas-price TO_DO
+
+```
 
 ---
 
