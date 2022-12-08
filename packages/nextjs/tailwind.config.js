@@ -5,4 +5,18 @@ module.exports = {
     extend: {},
   },
   plugins: [require("daisyui")],
+  daisyui: {
+    themes: [
+      {
+        fuel: {
+          primary: "#01ffc8",
+          secondary: "#F000B8",
+          accent: "#37CDBE",
+          neutral: "#3D4451",
+          "base-100": "#FFFFFF",
+          "base-content": "#FFFFFF",
+        },
+      },
+    ],
+  },
 };
