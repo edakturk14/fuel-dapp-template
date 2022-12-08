@@ -1,15 +1,33 @@
-# fuel-starter-kit
-Get started building on Fuel
+# Fuel Starter Kit ⛽🌴
 
-Write "how to set up" docs:
-- reqs (Node.js v16.15.0 or higher, yarn, git) + rust, cargo and forc
-- clone
-- yarn install
-- Start nextjs
-- ? Start fuel local chain
+Get started building on Fuel.
+
+## QuickStart
+
+### Prerequisites
+
+- Node.js v16.15.0 or higher, yarn, git + rust, cargo and forc
+
+### Getting started
+
+1. Clone this repo & install dependencies:
+```
+git clone https://github.com/edakturk14/fuel-starter-kit.git
+cd fuel-starter-kit
+yarn install
+```
+
+2. Start your app:
+```
+yarn next:start
+```
+
+- ? Start fuel local chain // had error, asked on discord
+- yarn fuel:build
 - ? FuelDeploy
 
-Feature / tech-details
+## Features
+
 - yarn to allow monorepos
 - download @types automatically with the yarn plugin
 - yarn scripts helpers (next/fuel start, etc)
