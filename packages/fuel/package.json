@@ -2,6 +2,7 @@
   "name": "@fuel-starter-kit/fuel",
   "version": "0.0.1",
   "scripts": {
-    "dev": "yarn exec forc --version"
+    "dev": "yarn exec forc --version",
+    "build": "cd contract && yarn exec forc build"
   }
 }
