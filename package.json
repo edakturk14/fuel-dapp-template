@@ -1,0 +1,11 @@
+{
+  "name": "fuel-starter-kit",
+  "version": "0.0.1",
+  "workspaces": {
+    "packages": [
+      "packages/fuel",
+      "packages/nextjs"
+    ]
+  },
+  "packageManager": "yarn@3.3.0"
+}
