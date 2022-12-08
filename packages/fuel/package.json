@@ -1,4 +1,7 @@
 {
   "name": "@fuel-starter-kit/fuel",
-  "version": "0.0.1"
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "yarn exec forc --version"
+  }
 }
