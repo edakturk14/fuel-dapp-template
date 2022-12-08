@@ -10,4 +10,8 @@ Write "how to set up" docs:
 - ? FuelDeploy
 
 Feature / tech-details
+- yarn to allow monorepos
+- download @types automatically with the yarn plugin
+- yarn scripts helpers (next/fuel start, etc)
+- TW / Daisy + conf
 - eslint / prettier
