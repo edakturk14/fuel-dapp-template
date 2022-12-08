@@ -24,6 +24,7 @@ yarn next:start
 
 - ? Start fuel local chain // had error, asked on discord
 - yarn fuel:build
+- yarn fuel:chain // start your local node
 - ? FuelDeploy
 
 ## Features
