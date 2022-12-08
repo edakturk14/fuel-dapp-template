@@ -1,0 +1,6 @@
+# folders
+.next
+node_modules/
+public
+**/*.css
+**/*.json

@@ -8,3 +8,6 @@ Write "how to set up" docs:
 - Start nextjs
 - ? Start fuel local chain
 - ? FuelDeploy
+
+Feature / tech-details
+- eslint / prettier
