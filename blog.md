@@ -1,4 +1,4 @@
-# Modular Blockchains & Building on Fuel
+# Modular Blockchains & Getting started w/Fuel
 
 TL;DR:
 - Modular Blockchains present a new architectural design by decoupling the core functions of blockchains. This creates a new design where each layer can specialize for the function they provide.
