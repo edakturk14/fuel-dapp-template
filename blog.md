@@ -1,3 +1,6 @@
+Blog draft here: https://hashnode.com/preview/6398422032e52b31f1388d53
+
+---
 # Modular Blockchains & Getting started w/Fuel
 
 TL;DR:
