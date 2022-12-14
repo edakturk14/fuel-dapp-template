@@ -2,7 +2,6 @@ Blog draft here: https://hashnode.com/preview/6398422032e52b31f1388d53
 
 ---
 # Modular Blockchains & Getting started w/Fuel
-
 TL;DR:
 - Modular Blockchains present a new architectural design by decoupling the core functions of blockchains. This creates a new design where each layer can specialize for the function they provide.
 - Fuel is building the fastest execution layer for the modular blockchain paradigm.
@@ -34,32 +33,34 @@ You may have heard of the Scalability Trilemma (aka Blockchain Trilemma), a term
 
 The Scalability Trilemma states that it's only possible to get 2 out of the three properties with current technologies. Therefore, one feature can only be improved by sacrificing another. For example, a blockchain can prioritize Execution and make the transactions fast by having fewer nodes, increasing the cost to run a node and hence giving away from decentralization. (The Solana Blockchain can be given as an example).
 
-There have been many approaches to improve scalability for a Traditional (Monolithic) blockchain where one should consider the Blockchain Trilemma. A Monolithic Blockchain, in short, is an architecture where the blockchain's core functions are handled on the same layer, the Layer 1.
+There have been many approaches to improve scalability for a traditional (monolithic) blockchain where one should consider the Blockchain Trilemma. A Monolithic Blockchain, in short, is an architecture where the blockchain's core functions are handled on the same layer, the Layer 1. In the context of Ethereum, various teams have been and are continuing to explore different solutions to improve scalability. Some of these solutions have shown promise, while others have proven to be a dead end.
 
-In the context of Ethereum, various teams have been and are continuing to explore different solutions to improve scalability, such as Layer2s and Rollups. Some of these solutions have shown promise, while others have proven to be a dead end.
+To put it simply, it is very difficult to optimize a single-layer with these three features. Rather than trying to optimize for all three properties on a single layer, some have suggested designing systems that break down the layer into multiple building blocks.
 
 This is where **Modular Blockchains** come in. It's an architecture design that aims to solve scalability issues with a new approach. Modular blockchain architecture uses **modular components and features to build customizable, scalable, and flexible blockchain systems**.
 
-Let's start with an overview of blockchain architectures and then move on to modular blockchains.
+A modular design can be thought of as similar to building with Lego blocks. Each block is a module, and each module has a specific function or purpose. Modules can be combined in various ways to create a larger, more complex structure.
+
+![Screen Shot 2022-12-14 at 07.25.01.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1670991913294/9vAnd1cFO.png align="left")
+
+Let's start with an introduction to the blockchain architecture with the core functions a blockchain provides and then look at the modular blockchains.
 
 ### Blockchain Architecture
 
-At its core, a blockchain provides three functions: **Consensus**, **Execution** and **data availability**. We can think of these core functions as three modules or layers that make up the blockchain.
+At its core, a blockchain provides four main functions: **Consensus**, **Execution,** **Data Availability** and ** Settlement**. We can think of these core functions as three modules or layers that make up the blockchain.
 
 1. **Consensus**: Orders transactions, ensures that all nodes have the same state. The consensus protocol defines the rules on how transactions are ordered and how new blocks are added (e.g., PoW and PoS).
 2. **Execution**: Processes transactions and changes the state of the blockchain (e.g., when Alice sends 1ETH to Bob, the state of the blockchain needs to be updated)
 3. **[Data availability](https://coinmarketcap.com/alexandria/article/what-is-data-availability)**: Ensures data is available. When new blocks are added, the data must be available upon request.
 4. *(Optional)* **Settlement**: Dispute resolution. This is how the blockchain determines valid transactions.
 
-[blockchain core features image]
+![Screen Shot 2022-12-13 at 12.47.00.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1670924835465/kR9WBg9E3.png align="left")
 
 #### Monolithic Blockchains
 
-Let's take a step back and talk about the traditional blockchain architecture, aka Monolithic Blockchains.
+In the Monolithic blockchain architecture **all the core components of the blockchain are handled on a single layer: Layer 1**. Bitcoin and Solana are examples of monolithic blockchains.
 
-In the Monolithic blockchain architecture, the blockchain does everything. In other words, **all three core components of the blockchain are handled on a single layer: Layer 1**. Bitcoin and Solana are examples of monolithic blockchains.
-
-In a Monolithic Blockchain, you must find resources that perform well on three core features. This means there will be a significant trade-off and/or very high hardware requirements, and the scalability trilemma comes into play. Different blockchains prioritize different core features; they optimize for the core feature(s) that are most important.
+In a Monolithic Blockchain, you must find resources that perform well on three core features. This means there will be a significant trade-off and/or very high hardware requirements, and the scalability trilemma comes into play. Basically because the same layer is asked to do too many things. Different blockchains prioritize different core features; they optimize for the core feature(s) that are most important.
 
 Alongside the high hardware requirements, monolithic blockchains present limited control and flexibility. All apps on that blockchain must follow the pre-determined rules/standards defined by layer 1. (E.g., the programming languages you can write your smart contract in.)
 
@@ -73,23 +74,31 @@ Having separate layers provides **scalability** and **flexibility.**
 - **Scalability**: Modular blockchains are more scalable because the resources are separated. Each module of the stack is **specialized for a specific function**. Therefore, the module can optimize the resources for the particular operation, and so this would increase efficiency.
 - **Flexibility**: Modular blockchains are built from modules that can be updated and swapped out. You're not limited to a particular set of resources but can choose the layers that best fit your use case. This allows the creation of chains that are **tailored to specific needs** and allows developers to **quickly and easily make changes** to the blockchain without performing a full-scale upgrade.
 
-###  Modular Blockchain Platforms: Ethereum, Celestia & Fuel
+###  Modular Blockchain Platforms: Ethereum, Celestia, Polygon Avail & Fuel
 
-The Ethereum roadmap has been shifted to be modular, becoming **[rollup-centric](https://ethereum-magicians.org/t/a-rollup-centric-ethereum-roadmap/4698)** & with **sharding**. [Rollups](https://ethereum.org/en/layer-2/#what-is-layer-2) are one of the best examples of modular architecture. A Rollup will do the execution and then leave consensus, data availability, and settlement for Layer 1. That's how a Rollup can scale exponentially compared to L1. This lowers the costs and leads to faster transactions. Ethereum sharding is a potential solution to the scalability problem of the Ethereum blockchain. It proposes to divide the network into smaller sub-networks called "shards", which can process transactions and store data independently. You can read more about Ethereum sharding over [here](https://ethereum.org/en/upgrades/sharding/).
+Let's talk a few things happening in the modular blockchain world. 🌍
+
+The Ethereum roadmap has been shifted to being modular by becoming **[rollup-centric](https://ethereum-magicians.org/t/a-rollup-centric-ethereum-roadmap/4698)** & with **sharding**. [Rollups](https://ethereum.org/en/layer-2/#what-is-layer-2) are one of the best examples of modular architecture. A Rollup will do the execution and then leave consensus, data availability, and settlement for Layer 1. That's how a Rollup can scale exponentially compared to L1. This lowers the costs and leads to faster transactions. Ethereum sharding is a potential solution to the scalability problem of the Ethereum blockchain. It proposes to divide the network into smaller sub-networks called "shards", which can process transactions and store data independently. You can read more about Ethereum sharding over [here](https://ethereum.org/en/upgrades/sharding/).
 
 ![Screen Shot 2022-12-13 at 12.33.59.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1670924046271/Wr8z4EJGy.png align="left")
 
-[Celestia](https://celestia.org/) is the first blockchain pioneer the modular blockchain architecture. It's the network that coined the term: Modular Blockchain. Simply put, **Celestia is minimal-layer 1 that provides data availability & consensus.** Celestia orders data and makes it available but does not execute the transactions. Instead, the Execution is outsourced to specialized execution layers like rollups. Celestia aims to solve the Data Availability problem that blockchains face. The Data Availability problem refers to the need to make sure all nodes in the network have access to the same complete and accurate data stored on the blockchain. This can become difficult to achieve, especially as the network grows in size and complexity. You can read more about Celestia & the data availability problem over here. 
+[Celestia](https://celestia.org/) is the first blockchain pioneer the modular blockchain architecture. It's the network that coined the term: Modular Blockchain. Simply put, **Celestia is minimal-layer 1 that provides data availability & consensus.** Celestia orders data and makes it available but does not execute the transactions. Instead, the Execution is outsourced to specialized execution layers like rollups. Celestia aims to solve the Data Availability problem that blockchains face. The Data Availability problem refers to the need to make sure all nodes in the network have access to the same complete and accurate data stored on the blockchain. This can become difficult to achieve, especially as the network grows in size and complexity. You can read more about Celestia & the data availability problem over here.
 
-Another core layer in the Modular blockchain stack **Fuel which is the Execution Layer**. It's the more exciting part for me as an app developer since I can get hands-on and build some apps. We'll be talking about Fuel in the next section & move on to writing a smart contract in Sway and deploying it to Fuel.
+![Screen Shot 2022-12-14 at 07.38.40.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1670992734934/orYPhJfBh.png align="left")
+
+[Polygon Avail](https://wiki.polygon.technology/docs/avail/introduction/what-is-avail/) is Polygon's data availability solution. It provides ordering and recording of transactions, and leaves the other tasks for separate layers to scale other blockchains with the modular architecture.
+
+![Screen Shot 2022-12-14 at 07.41.01.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1670992871900/TnPQTOQMC.png align="left")
+
+Another core layer in the Modular blockchain stack is [Fuel](https://fuel-labs.ghost.io/) which is the **execution layer**. It's the more exciting part for me as an app developer since I can get hands-on and build some apps. We'll be talking more about Fuel & move on to writing a smart contract in Sway and deploying it to Fuel.
 
 ---
 
 ## Getting started w/Fuel
 
-Fuel is the fastest execution layer for modular blockchains. In the modular blockchain, the Execution, Data Availability and Consensus are separate layers. Fuel is the Execution layer. 
+Fuel is the fastest execution layer for modular blockchains. In the modular blockchain, the Execution, Data Availability and Consensus are separate layers, so Fuel is the Execution layer. 
 
-Fuel network is created by Fuel Labs, making the full suite of developer tools for building on Fuel, including the Sway programming language.
+Fuel network is created by Fuel Labs, which is creating a full suite of developer tools for building on Fuel, including the Sway programming language, to provide a top in class developer experience.
 
 #### Fuel Features
 
@@ -104,11 +113,11 @@ It's also important to mention the Fuel developer suite over here. Fuel has a fu
 
 ## Writing a smart contract in Sway & Deploying to the Fuel Network
 
-To recap: Sway is the domain-specific language for writing smart contracts on the FuelVM, inspired by Rust. Fuel is the execution environment (blockchain) we'll be deploying to.
-
 The goal of this section is to:
 - Provide an overview of the tools needed to build on Fuel
-- Understand how to write and compile a smart contract in Sway
+- Understand how to write & compile a smart contract in Sway to Fuel in 5 min
+
+To recap: Sway is the domain-specific language for writing smart contracts on the FuelVM, inspired by Rust. Fuel is the execution environment (blockchain) we'll be deploying to.
 
 First, here are your go-to resources to learn more:
 - Sway Book: https://fuellabs.github.io/sway/latest
