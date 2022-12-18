@@ -266,13 +266,16 @@ In the next section, we will be writing a smart contract in Sway & Deploying it 
         
 4.  We need a deployer account to deploy the contract. Set up a Fuel wallet & create your account by following the steps [here](https://github.com/FuelLabs/forc-wallet#forc-wallet).
     
-    I've added the steps over here as well:  
-    1\. Initialize a wallet, make sure to save your seed phrase: `forc-wallet init`  
-    2\. Create a new account & save your address: `forc-wallet new`
+    I've added the steps over here as well:
+    
+    1.  Initialize a wallet, make sure to save your seed phrase: `forc-wallet init`
+        
+    2.  Create a new account & save your address: `forc-wallet new`
+        
     
     ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1671358803857/Jn1EX4ujh.png align="left")
     
-    To sign transactions with this wallet you'll need the transaction id and the account index(0 in the example screenshot)
+    To sign transactions with this wallet you'll need the transaction id and the account index.
     
 5.  Get some testnet tokens from the [faucet](https://faucet-beta-2.fuel.network/)
     
