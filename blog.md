@@ -295,7 +295,9 @@ In the next section, we will be writing a smart contract in Sway & Deploying it 
         
         This will give you a signature
         
-    3.  Input the signature to the first terminal. If all goes well, you should see the contract id and the block number. You can have a look at it on the [Fuel block explorer.](https://fuellabs.github.io/block-explorer-v2/)
+    3.  Input the signature to the first terminal. If all goes well, you should see the contract id & the block number on the console.
+        
+        You can search for the transaction-id on the [Fuel block explorer](https://fuellabs.github.io/block-explorer-v2/), make sure to add "**0x**" to the start of the transaction number.
         
 
 🙌 There you go! You've deployed a smart contract on the Fuel Beta-2 Testnet. Here's a [repo](https://github.com/FuelLabs/awesome-fuel) to follow along on that contains a comprehensive list of Fuel resources!
