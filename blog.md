@@ -1,14 +1,13 @@
 Blog draft here: https://hashnode.com/preview/6398422032e52b31f1388d53
 
 ---
-
 TL;DR:
 
-*   Modular Blockchains present a new design by decoupling the core functions of blockchains. This creates a new modular architecture where each module can specialize for the function they provide. This allows for more customization and better performance
+*   Modular Blockchains present a new design by **decoupling the core functions of blockchains**. This creates **a new modular architecture where each module can specialize for the function they provide**. This allows for more **customization** and better **performance**
     
-*   Fuel is building the fastest execution layer & the full suite of developer products for the modular blockchain architecture.
+*   **Fuel is building the fastest execution layer** & the **full suite of developer products** for the modular blockchain architecture.
     
-*   Fuel has created its own Virtual Machine called FuelVM. Sway is a domain-specific language inspired by Rust to write smart contracts on Fuel. Fuel Orchestrator(Forc) is the system and package for Sway.
+*   Fuel has created its own **Virtual Machine called FuelVM**. **Sway is a domain-specific language** inspired by Rust to write smart contracts on Fuel. **Fuel Orchestrator(Forc) is the system and package for Sway**.
     
 
 I've been learning a lot about Modular Blockchains. As an app developer, the protocol layer is not something I spend most of my time researching. However, the need for scalability becomes very clear if you've made any transaction on Ethereum mainnet; the costs are high, and the transactions are slow, especially during peak times.
@@ -131,28 +130,30 @@ Overall it's fair to say that I'm excited to see the modular tech stack evolve a
 
 # Getting started w/Fuel
 
-In the modular blockchain, the execution, data availability and consensus are separate layers, Fuel is the Execution layer. It's the **fastest execution layer for modular blockchains**.
+In the modular blockchain architecture, the execution, data availability and consensus are separate layers, Fuel is the **fastest Execution Layer for Modular Blockchains**.
 
-[Fuel network](https://www.fuel.network/) is created by Fuel Labs, which is creating a full suite of developer tools for building on Fuel, including the **Sway** programming language, to provide a top-in-class developer experience.
+[Fuel network](https://www.fuel.network/) is created by Fuel Labs, which is creating a full suite of developer tools for building on Fuel, including the **Sway** programming language and Fuel orchestrator (**Forc**) which is the toolchain, to provide a top-in-class developer experience.
 
-## Fuel Features
+## Why Fuel
 
 Here are some of the key features that make Fuel stand out:
 
-1.  [Parallel transaction execution](https://fuellabs.github.io/fuel-docs/master/what-is-fuel.html#parallel-transaction-execution): Most blockchains are single-threaded, meaning that only one thread is executed at a certain instant. Fuel uses a UTXO model, which allows for parallel execution; this way, it can execute more threads simultaneously.
+1.  **Improved Virtual Machine**: Fuel is developing its virtual machine, [Fuel Virtual Machine (FuelVM)](https://fuellabs.github.io/fuel-docs/master/what-is-fuel.html#fuelvm), to overcome some of the main drawbacks of EVM. You can read about the comparison of FuelVM and EVM over [here](https://fuellabs.github.io/fuel-docs/master/vs-evm.html).
     
-2.  [Fuel Virtual Machine (FuelVM)](https://fuellabs.github.io/fuel-docs/master/what-is-fuel.html#fuelvm): Fuel is developing its virtual machine to overcome some of the main drawbacks of EVM.
+2.  [**Parallel transaction execution**](https://fuellabs.github.io/fuel-docs/master/what-is-fuel.html#parallel-transaction-execution): Most blockchains are single-threaded, meaning that only one thread is executed at a certain instant. Fuel uses a UTXO model, which allows for parallel execution; this way, it can execute more threads simultaneously.
     
-3.  [Sway Language](https://fuellabs.github.io/fuel-docs/master/what-is-fuel.html#sway-language): Fuel has its domain-specific language called Sway thats based on Rust.
+    ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1671355536520/APo_-tTEF.png align="center")
     
-4.  [Developer tooling](https://fuellabs.github.io/fuel-docs/master/what-is-fuel.html#developer-tooling): Fuel is internally building and maintaining a full suite of developer tools to provide developers with all the resources to easily build on the network.
+3.  [**Developer Tooling**](https://fuellabs.github.io/fuel-docs/master/what-is-fuel.html#developer-tooling): Fuel is internally building and maintaining a full suite of developer tools to provide developers with all the resources to easily build on the network. This includes Sway, Fuel's domain-specific language based on Rust.
+    
+4.  **Flexibility with a Modular Execution Layer**: A modular execution layer is different than a rollup, and one of the key differences is that it is **not closely connected to a specific layer 1**, which gives Fuel the **flexibility to be deployed in a variety of settings**. You can choose the Data Availability which fits your case best for example. Read more over [here](https://fuellabs.github.io/fuel-docs/master/fuel-configurations.html).
     
 
 ## How can I build on Fuel?
 
 First, here are your go-to resources to learn more:
 
-*   [Sway Book](https://fuellabs.github.io/sway/latest)
+*   [Sway Book](https://fuellabs.github.io/sway/latest) 🌴
     
 *   [Rust SDK Book](https://fuellabs.github.io/fuels-rs/latest)
     
@@ -174,99 +175,118 @@ In the next section, we will be writing a smart contract in Sway & Deploying it 
 
 ## Tools:
 
-*   **Fuel:** the execution environment (blockchain)
+*   **Fuel:** The execution environment (blockchain)
     
-*   **Sway:** domain-specific language for writing smart contracts on the FuelVM
+    *   **beta-2 testnet**: Fuel's second public testnet which has a bridge to Ethereum's Goerli test network.
+        
+*   [Sway](https://fuellabs.github.io/sway/v0.32.2/book/)🌴**:** Domain-specific language for writing smart contracts on the FuelVM
     
-*   **Fuel Orchestrator(Forc)**: package manager for Sway.
+*   **Fuel Orchestrator(Forc)**: Package manager for Sway containing tools and commands for building on the Fuel ecosystem.
     
-*   **Fuel wallet CLI** *please note that the wallet is under active development*
+*   **Fuel wallet** *please note that the wallet is under active development*
     
-*   [**Fuel Faucet**](https://faucet-beta-1.fuel.network/)
+*   [Fuel TestNet Faucet](https://faucet-beta-2.fuel.network/)
+    
+*   [Fuel Network Explorer](https://fuellabs.github.io/block-explorer-v2)
     
 
 ## Installation & Setup:
 
 1.  Install the Rust toolchain by following the steps [here](https://fuellabs.github.io/sway/v0.24.3/introduction/installation.html#dependencies)
     
-2.  The **Fuel toolchain** is required to compile Sway contracts and run them on the FuelVM. Install the Fuel toolchain by the command below; you can also find the steps [here](https://github.com/FuelLabs/fuelup)  
+2.  The **Fuel toolchain** is required to compile Sway contracts & run them on the FuelVM. Install the Fuel toolchain by the command below; you can also find the steps [here](https://github.com/FuelLabs/fuelup)  
     `$curl --proto '=https' --tlsv1.2 -sSf \ https://fuellabs.github.io/fuelup/fuelup-init.sh | sh`
     
 
 *   **Toolchain** is a new terminology; it refers to installing the Fuel Orchestrator(forc) and related plugins (like the fuel-core).
     
-*   `fuelup` is the official package manager for Fuel that installs The Fuel Toolchain; you can read more on the [fuelup docs](https://fuellabs.github.io/fuelup/master/index.html) and find some [example commands](https://fuellabs.github.io/fuelup/master/examples.html)  
-      
-    Run the following to verify that toolchain was installed: `fuelup --version forc --version fuel-core --version`
+*   `fuelup` is the official package manager for Fuel that installs The Fuel Toolchain; you can read more on the [fuelup docs](https://fuellabs.github.io/fuelup/master/index.html) and find some [example commands](https://fuellabs.github.io/fuelup/master/examples.html)
+    
+    Run the following to verify that toolchain was installed:  
+    `fuelup --version forc --version fuel-core --version`
     
 
 3.  The [beta-2 network](https://fuellabs.github.io/fuel-docs/master/networks/beta-1.html) is the second public Fuel testnet. Install the beta-2 toolchain by using the following command:  
-    `run fuelup toolchain install beta-2`  
+    `fuelup toolchain install beta-2`
     
-    Verify that the toolchain was successfully installed by running the following: `fuelup show`  
-      
+    Verify that the toolchain was successfully installed by running the following: `fuelup show`
+    
+    ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1671358437654/lgyf-uvsH.png align="left")
+    
     *You can also build your own toolchain with* `fuelup`*, more on it* [*here*](https://fuellabs.github.io/fuelup/master/concepts/toolchains.html)
-    
-4.  Setup a Fuel wallet & create your account by following the [steps](https://github.com/FuelLabs/forc-wallet#forc-wallet) Make sure to save the seed phrase and your address. We'll be using the address to deploy the smart contract.
-    
-5.  Get some TestNet tokens from the [faucet](https://faucet-beta-1.fuel.network/)
     
 
 ## Create & Deploy a Smart Contract in Sway to Fuel
 
-1.  Create a smart contract project by running the following: `forc new counter-contract`  
+1.  Create a smart contract project by running the following:  
+    `forc new fuel-project`
+    
+    Here's what the project folder looks like:
+    
+    ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1671357545409/UiOTQZR4J.png align="left")
+    
+
+*   **Forc.toml**: manifest file that defines the project metadata for Fuel
+    
+*   **src/main.sw:** sample smart contract
+    
+
+2.  Open **main.sw** and change the file as below. I've added the comments in the code to explain the code.  
+    **TO DO**
+    
       
-    Here's what the project folder looks like: `. ├── Cargo.toml ├── Forc.toml ├── src │   └── main.sw └── tests └── harness.rs`
+    *For this project, we will not be looking into tests; you can use "*`forc test` "to run tests on your smart contract.
     
+3.  In the project folder, run the command below to compile your contract:  
+    `forc build`
+    
+    ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1671357735846/v-nKL-hbA.png align="center")
+    
+    You'll see new folders created in the project repo:
+    
+    *   **out:** A new folder contains the JSON files of the contract & the byte code.
+        
+    *   **Forc.lock**: Contains the information about your dependencies (similar to cargo.lock). This file should not be manually edited and is generated after the build.
+        
 
-*   Forc.toml is the manifest file which defines the project metadata for Fuel
+4.  We need a deployer account to deploy the contract. Set up a Fuel wallet & create your account by following the steps [here](https://github.com/FuelLabs/forc-wallet#forc-wallet).  
+      
+    I've added the steps over here as well:  
+    1\. Initialize a wallet, make sure to save your seed phrase: `forc-wallet init`  
+    2\. Create a new account & save your address: `forc-wallet new`
     
-*   Cargo.toml is the manifest file for Rust's package manager, cargo
+    ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1671358803857/Jn1EX4ujh.png align="left")
     
-*   src/main.sw: sample smart contract
+    To sign transactions with this wallet you'll need the transaction id and the account index(0 in the example screenshot)
     
-*   tests folder contains the tests file
+5.  Get some testnet tokens from the [faucet](https://faucet-beta-2.fuel.network/)
     
+6.  Now lets deploy the contract.  
+    There are a few different options for deploying the smart contract:
+    
+    *   **forc** from the command line *We'll be using this option*
+        
+    *   [RustSDK](https://github.com/FuelLabs/fuels-rs#deploying-a-sway-contract)
+        
+    *   [TypeScriptSDK](https://github.com/FuelLabs/fuels-ts/#deploying-contracts)
+        
+    
+    1.  Deploy the contract to the beta-2 tesnet: `forc deploy --url node-beta-2.fuel.network/graphql --gas-price 1`
+        
+        You'll need to provide the wallet address.
+        
+    2.  On a new terminal generate a signature to sign from your wallet:  
+        `forc wallet sign <transaction_id> <account_index>`
+        
+        This will give you a signature
+        
+    3.  Input the signature to the first terminal. If all goes well, you should see the contract id and the block number. You can have a look at it on the [Fuel block explorer.](https://fuellabs.github.io/block-explorer-v2/)
+        
 
-2.  Let's change main.sw as below. I've added the comments in the code to explain the code.
-    
-
-**TO\_DO**
-
-*For this project, we will not be looking into tests; you can use "*`forc test` "to run tests on your smart contract.
-
-3.  In the project folder, run the command below to complile your contract:
-    
-
-```plaintext
-forc build
-```
-
-You'll see new folders created in the project repo:
-
-*   **out:** A new folder contains the JSON files of the contract and the byte code.
-    
-*   **Forc.lock**: Contains the information about your dependencies (similar to cargo.lock). This file should not be manually edited and is generated after the build.
-    
-
-4.  We need a deployer account to deploy the contract; this is the account which we created earlier.
-    
-5.  Time to deploy the contract. There are a few different options for deploying the smart contract:
-    
-
-*   Use forc from the command line *We'll be using this option*
-    
-*   [RustSDK](https://github.com/FuelLabs/fuels-rs#deploying-a-sway-contract)
-    
-*   [TypeScriptSDK](https://github.com/FuelLabs/fuels-ts/#deploying-contracts)
-    
-
-```plaintext
-forc deploy --url https://node-beta-1.fuel.network/graphql --gas-price TO_DO
-```
+🙌 There you go! You've deployed a smart contract on the Fuel Beta-2 Testnet. Here's a [repo](https://github.com/FuelLabs/awesome-fuel) to follow along on that contains a comprehensive list of Fuel resources!
 
 * * *
 
-Modular blockchains have the potential to provide exponential scalability to smart contract platforms, which is one of the most critical barriers to adoption. A second advantage unlocked by the modular architecture is flexibility. This can enable the creation of more efficient blockchain networks that can better meet the needs of users and applications.
+Modular blockchains have the potential to provide **exponential scalability to smart contract platforms**, which is one of the most critical barriers to adoption. A second advantage unlocked by the **modular architecture is flexibility**. This can enable the creation of more efficient blockchain networks that can better meet the needs of users and applications.
 
 I hope that this was helpful in getting a start on Fuel, more to come! Catch you on the next one!
