@@ -3,11 +3,11 @@ Blog draft here: https://hashnode.com/preview/6398422032e52b31f1388d53
 ---
 TL;DR:
 
-*   Modular Blockchains present a new design by **decoupling the core functions of blockchains**. This creates **a new modular architecture where each module can specialize for the function they provide**. This allows for more **customization** and better **performance**
+*   Modular Blockchains present a new design by decoupling the core functions of blockchains. This creates a new modular architecture where each module can specialize for the function they provide. This allows for more customization and better performance
     
-*   **Fuel is building the fastest execution layer** & the **full suite of developer products** for the modular blockchain architecture.
+*   Fuel is building the fastest execution layer & the full suite of developer products for the modular blockchain architecture.
     
-*   Fuel has created its own **Virtual Machine called FuelVM**. **Sway is a domain-specific language** inspired by Rust to write smart contracts on Fuel. **Fuel Orchestrator(Forc) is the system and package for Sway**.
+*   Fuel has created its own Virtual Machine called FuelVM. Sway is a domain-specific language inspired by Rust to write smart contracts on Fuel. Fuel Orchestrator(Forc) is the system and package for Sway.
     
 
 I've been learning a lot about Modular Blockchains. As an app developer, the protocol layer is not something I spend most of my time researching. However, the need for scalability becomes very clear if you've made any transaction on Ethereum mainnet; the costs are high, and the transactions are slow, especially during peak times.
@@ -179,7 +179,7 @@ In the next section, we will be writing a smart contract in Sway & Deploying it 
     
     *   **beta-2 testnet**: Fuel's second public testnet which has a bridge to Ethereum's Goerli test network.
         
-*   [Sway](https://fuellabs.github.io/sway/v0.32.2/book/)🌴\*\*:\*\* Domain-specific language for writing smart contracts on the FuelVM
+*   [Sway](https://fuellabs.github.io/sway/v0.32.2/book/)🌴: Domain-specific language for writing smart contracts on the FuelVM
     
 *   **Fuel Orchestrator(Forc)**: Package manager for Sway containing tools and commands for building on the Fuel ecosystem.
     
