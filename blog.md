@@ -128,7 +128,7 @@ Overall it's fair to say that I'm excited to see the modular tech stack evolve a
 
 * * *
 
-# Getting started w/Fuel
+# Getting started w/Fuel ⛽️
 
 In the modular blockchain architecture, the execution, data availability and consensus are separate layers, Fuel is the **fastest Execution Layer for Modular Blockchains**.
 
@@ -179,7 +179,7 @@ In the next section, we will be writing a smart contract in Sway & Deploying it 
     
     *   **beta-2 testnet**: Fuel's second public testnet which has a bridge to Ethereum's Goerli test network.
         
-*   [Sway](https://fuellabs.github.io/sway/v0.32.2/book/)🌴**:** Domain-specific language for writing smart contracts on the FuelVM
+*   [Sway](https://fuellabs.github.io/sway/v0.32.2/book/)🌴\*\*:\*\* Domain-specific language for writing smart contracts on the FuelVM
     
 *   **Fuel Orchestrator(Forc)**: Package manager for Sway containing tools and commands for building on the Fuel ecosystem.
     
@@ -215,6 +215,10 @@ In the next section, we will be writing a smart contract in Sway & Deploying it 
     
     *You can also build your own toolchain with* `fuelup`*, more on it* [*here*](https://fuellabs.github.io/fuelup/master/concepts/toolchains.html)
     
+4.  You can install the VS Sway Language Extension for convenience in working with sway files.
+    
+    ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1671360375367/QhmgXNEFC.png align="left")
+    
 
 ## Create & Deploy a Smart Contract in Sway to Fuel
 
@@ -231,10 +235,22 @@ In the next section, we will be writing a smart contract in Sway & Deploying it 
 *   **src/main.sw:** sample smart contract
     
 
-2.  Open **main.sw** and change the file as below. I've added the comments in the code to explain the code.  
-    **TO DO**
+2.  Open **main.sw** and change the file as below. I've added the comments in the code to explain the code.
     
-      
+    ```rust
+    contract;
+    
+    abi MyContract {
+        fn test_function() -> bool;
+    }
+    
+    impl MyContract for Contract {
+        fn test_function() -> bool {
+            true
+        }
+    }
+    ```
+    
     *For this project, we will not be looking into tests; you can use "*`forc test` "to run tests on your smart contract.
     
 3.  In the project folder, run the command below to compile your contract:  
@@ -248,9 +264,8 @@ In the next section, we will be writing a smart contract in Sway & Deploying it 
         
     *   **Forc.lock**: Contains the information about your dependencies (similar to cargo.lock). This file should not be manually edited and is generated after the build.
         
-
-4.  We need a deployer account to deploy the contract. Set up a Fuel wallet & create your account by following the steps [here](https://github.com/FuelLabs/forc-wallet#forc-wallet).  
-      
+4.  We need a deployer account to deploy the contract. Set up a Fuel wallet & create your account by following the steps [here](https://github.com/FuelLabs/forc-wallet#forc-wallet).
+    
     I've added the steps over here as well:  
     1\. Initialize a wallet, make sure to save your seed phrase: `forc-wallet init`  
     2\. Create a new account & save your address: `forc-wallet new`
