@@ -4,6 +4,7 @@
   "scripts": {
     "dev": "yarn exec forc --version",
     "build": "cd contract && yarn exec forc build",
-    "chain": "fuel-core run --ip 127.0.0.1 --port 4000 --chain ./chainConfig.json --db-path ./.fueldb"
+    "chain": "fuel-core run --ip 127.0.0.1 --port 4000 --chain ./chainConfig.json --db-path ./.fueldb",
+    "deploy:local": "cd contract && yarn exec forc deploy --url localhost:4000 --unsigned"
   }
 }
