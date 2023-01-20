@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "contract:typings": "npx fuels typegen -i ../fuel/contract/out/debug/*-abi.json -o ./contracts"
   },
   "dependencies": {
     "@types/node": "18.11.11",
@@ -19,6 +20,7 @@
     "eslint-config-next": "13.0.6",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.2.1",
+    "fuels": "^0.29.1",
     "next": "13.0.6",
     "postcss": "^8.4.19",
     "prettier": "^2.8.1",
