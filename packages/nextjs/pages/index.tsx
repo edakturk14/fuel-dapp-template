@@ -16,15 +16,15 @@ export default function Home() {
 
   useEffect(() => {
     const getCounterValue = async () => {
-      const { value } = await contract.functions.count().get();
+      const { value } = await contract.functions.counter().get();
       setCounter(Number(value));
     };
     getCounterValue();
   }, []);
 
   const incrementCounter = async () => {
-    await contract.functions.increment().call();
-    const { value } = await contract.functions.count().get();
+    const { value } = await contract.functions.increment().call();
+    // const { value } = await contract.functions.count().get();
     setCounter(Number(value));
   };
 
