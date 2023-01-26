@@ -9,3 +9,25 @@ Fuel is building the fastest Execution Layer for modular blockchains. Sway is th
 This blog post is an explianer for the Fuel dApp template. It's a new starter kit to hit the ground running when building decentralized applications on Fuel!
 
 The starter kit is built using NextJS, DaisyUI, Forc, Sway and Typescript.
+
+## Recap on Fuel
+
+- Fuel has its own Virtual Machine called [FuelVM](https://fuellabs.github.io/fuel-docs/master/what-is-fuel.html#fuelvm).
+- Sway is a domain-specific language inspired by Rust to write smart contracts for the Fuel network.
+- Fuel Orchestrator(Forc) is the system and package for Sway.
+
+## Building on Fuel
+
+Fuel is internally building and maintaing a full suite of developer tools:
+
+- Sway Book 🌴
+- Rust SDK Book
+- TypeScript SDK
+
+There's also the Fuel Forum to ask questions and follow updates.
+
+## Starter Toolkit
+
+- Feature 1
+- Feature 2
+- Feature 3
