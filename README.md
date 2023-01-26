@@ -11,9 +11,11 @@ The best way to get started building decentralized applications on Fuel! Built u
 ### Prerequisites
 
 - [Node.js](https://nodejs.org/en/) v16.15.0 or newer
-- yarn, git + rust, cargo and forc
+- [Yarn](https://www.npmjs.com/package/yarn)
+- [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
+- Rust, Cargo and Forc (explained in the installation section)
 
-### Installation & Setup
+### Installation
 
 1. Install the Rust toolchain by following the steps [here](https://fuellabs.github.io/sway/v0.24.3/introduction/installation.html#dependencies)
 
