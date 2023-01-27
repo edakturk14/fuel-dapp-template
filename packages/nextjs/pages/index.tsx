@@ -24,7 +24,6 @@ export default function Home() {
 
   const incrementCounter = async () => {
     const { value } = await contract.functions.increment().call();
-    // const { value } = await contract.functions.count().get();
     setCounter(Number(value));
   };
 
