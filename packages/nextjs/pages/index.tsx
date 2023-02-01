@@ -1,30 +1,69 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
-import { ContractAbi__factory } from "../contracts";
-import { Wallet } from "fuels";
+import { ContractAbi, ContractAbi__factory } from "../contracts";
+import { BN, Wallet } from "fuels";
 
-// ToDo. Move
-const WALLET_SECRET =
-  "0xa449b1ffee0e2205fa924c6740cc48b3b473aa28587df6dab12abc245d1f5298";
-const CONTRACT_ID =
-  "0x3edb96c23766b8504caaff042994efa18460e7ba27f60191394a6bcf5be8d7d8";
-const wallet = Wallet.fromPrivateKey(WALLET_SECRET);
-const contract = ContractAbi__factory.connect(CONTRACT_ID, wallet);
+interface NetworkConfig {
+  [key: string]: {
+    provider: string;
+  };
+}
+const AVAILABLE_NETWORKS: NetworkConfig = {
+  localhost: {
+    provider: "http://127.0.0.1:4000/graphql",
+  },
+  testnet: {
+    provider: "https://node-beta-2.fuel.network/graphql",
+  },
+};
+
+// Selected network
+const selectedNetwork: keyof NetworkConfig =
+  process.env.NEXT_PUBLIC_NETWORK ?? "localhost";
+const network = AVAILABLE_NETWORKS[selectedNetwork];
+
+const WALLET_SECRET = process.env.NEXT_PUBLIC_WALLET_SECRET ?? "";
+// Handle error.
+const CONTRACT_ID = process.env.NEXT_PUBLIC_CONTRACT_ID ?? "";
+
+let contract: ContractAbi;
+try {
+  const wallet = Wallet.fromPrivateKey(WALLET_SECRET, network.provider);
+  contract = ContractAbi__factory.connect(CONTRACT_ID, wallet);
+} catch (e) {
+  console.log("Error", e);
+}
 
 export default function Home() {
   const [counter, setCounter] = useState(0);
+  const [isLoadingTx, setIsLoadingTx] = useState(false);
+  const [errorMessage, setErroMessage] = useState("");
 
   useEffect(() => {
     const getCounterValue = async () => {
       const { value } = await contract.functions.counter().get();
       setCounter(Number(value));
     };
+
+    if (!contract) return;
     getCounterValue();
   }, []);
 
   const incrementCounter = async () => {
-    const { value } = await contract.functions.increment().call();
-    setCounter(Number(value));
+    setIsLoadingTx(true);
+    let data: { value: BN };
+    try {
+      data = await contract.functions.increment().call();
+    } catch (e) {
+      setIsLoadingTx(false);
+      // @ts-ignore
+      const errorMsg = e?.response?.errors?.[0]?.message ?? "Unknown error";
+      setErroMessage(errorMsg);
+      return;
+    }
+    setCounter(Number(data.value));
+    setIsLoadingTx(false);
+    setErroMessage("");
   };
 
   return (
@@ -41,10 +80,32 @@ export default function Home() {
           Fuel App
         </h1>
 
+        {!contract && (
+          <div className="alert alert-error max-w-sm mb-4">
+            <div>
+              <span>
+                Contract not connected. Make sure you have defined the right
+                values on the <code>.env</code> file.
+              </span>
+            </div>
+          </div>
+        )}
+
         <p>Current counter value: {counter}</p>
-        <button className="mt-4 btn btn-primary" onClick={incrementCounter}>
+        <button
+          className={`mt-4 btn btn-primary ${isLoadingTx ? "loading" : ""}`}
+          onClick={incrementCounter}
+        >
           Increment Counter
         </button>
+
+        {errorMessage && (
+          <div className="alert alert-error max-w-sm mt-4">
+            <div>
+              <span>{errorMessage}</span>
+            </div>
+          </div>
+        )}
       </main>
     </div>
   );
