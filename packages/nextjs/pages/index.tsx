@@ -53,8 +53,12 @@ export default function Home() {
     setIsLoadingTx(true);
     let data: { value: BN };
     try {
-      data = await contract.functions.increment().call();
+      data = await contract.functions
+        .increment()
+        .txParams({ gasPrice: 1 })
+        .call();
     } catch (e) {
+      console.error("~~ increment counter tx error", e);
       setIsLoadingTx(false);
       // @ts-ignore
       const errorMsg = e?.response?.errors?.[0]?.message ?? "Unknown error";
