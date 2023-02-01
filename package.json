@@ -14,7 +14,8 @@
     "fuel:start": "yarn workspace @fuel-starter-kit/fuel dev",
     "fuel:chain": "yarn workspace @fuel-starter-kit/fuel chain",
     "fuel:build": "yarn workspace @fuel-starter-kit/fuel build",
-    "fuel:deploy:local": "yarn workspace @fuel-starter-kit/fuel deploy:local"
+    "fuel:deploy:local": "yarn workspace @fuel-starter-kit/fuel deploy:local",
+    "fuel:deploy:testnet": "yarn workspace @fuel-starter-kit/fuel deploy:testnet"
   },
   "packageManager": "yarn@3.3.0"
 }
