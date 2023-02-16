@@ -62,16 +62,18 @@ yarn next:start
 yarn fuel:deploy:testnet
 ```
 
-The command will prompt you to sign the transaction. You can do it with:
+The command will prompt you to sign the transaction. To get a signature open a another termainal and use the following command to generate a signature:
 
 ```
-forc wallet sign --id MESSAGE_TO_SIGN --account-index 0
+forc-wallet sign TRANSACTION_ID ACCOUNT_INDEX
 ```
+
+Copy the signature from the previous terminal and paste it into your current terminal window and press enter to execute the signature.If everything goes as expected, the contract should be deployed successfully, and you should see the contract ID and block number displayed on the screen.
 
 3. Update .env.development
   - NEXT_PUBLIC_NETWORK=testnet
   - NEXT_PUBLIC_WALLET_SECRET (you can use the same account used for the deployment. Get the secret with `forc wallet export --account-index 0`)
-  - NEXT_PUBLIC_CONTRACT_ID (displayed after deploying the contract)
+  - NEXT_PUBLIC_CONTRACT_ID (make sure to add 0x in the beginning of the contract id)
 
 4. Start your app and visit http://localhost:3000
 ```
