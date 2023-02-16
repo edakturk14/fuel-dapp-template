@@ -48,12 +48,7 @@ yarn fuel:deploy:local
 
 3. Update Contract ID (result from fuel:deploy:local) in `.env.development`.
 
-4. Create the contract typings for the front-end app
-```
-yarn next:contract:typings
-```
-
-5. Start your app and visit http://localhost:3000
+4. Start your app and visit http://localhost:3000
 ```
 yarn next:start
 ```
@@ -78,12 +73,7 @@ forc wallet sign --id MESSAGE_TO_SIGN --account-index 0
   - NEXT_PUBLIC_WALLET_SECRET (you can use the same account used for the deployment. Get the secret with `forc wallet export --account-index 0`)
   - NEXT_PUBLIC_CONTRACT_ID (displayed after deploying the contract)
 
-4. Create the contract typings for the front-end app
-```
-yarn next:contract:typings
-```
-
-5. Start your app and visit http://localhost:3000
+4. Start your app and visit http://localhost:3000
 ```
 yarn next:start
 ```
