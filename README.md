@@ -73,7 +73,7 @@ Copy the signature from the previous terminal and paste it into your current ter
 3. Update .env.development
   - NEXT_PUBLIC_NETWORK=testnet
   - NEXT_PUBLIC_WALLET_SECRET (you can use the same account used for the deployment. Get the secret with `forc wallet export --account-index 0`)
-  - NEXT_PUBLIC_CONTRACT_ID (make sure to add 0x in the beginning of the contract id)
+  - NEXT_PUBLIC_CONTRACT_ID (you will need to add `0x` in the beginning of the contract-id)
 
 4. Start your app and visit http://localhost:3000
 ```
