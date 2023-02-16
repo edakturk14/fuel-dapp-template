@@ -28,59 +28,62 @@ The best way to get started building decentralized applications on Fuel! Built u
 
 ### Getting started
 
-1. Clone this repo & install dependencies:
+Clone this repo & install dependencies:
 ```
 git clone https://github.com/edakturk14/fuel-starter-kit.git
 cd fuel-starter-kit
 yarn install
 ```
 
----
-Writing here the current commands (we'll need to explain / format this better :D):
-
-```bash
-# Start the fuel chain locally
+### Local Deployments
+1. Start the fuel chain locally
+```
 yarn fuel:chain
-# Deploy the example contract locally (save the Contract ID!!)
+```
+
+2. Deploy the example contract locally. Make sure to save the Contract ID.
+```
 yarn fuel:deploy:local
-# Create the contract typings for the front-end app (maybe we can bundle this with yarn start)
+```
+
+3. Update Contract ID (result from fuel:deploy:local) in `.env.development`.
+
+4. Create the contract typings for the front-end app
+```
 yarn next:contract:typings
-# Start the next app
+```
+
+5. Start your app and visit http://localhost:3000
+```
 yarn next:start
 ```
 
-Update Contract ID (result from fuel:deploy:local) in `.env.development`. Wallet secret should be fine (using the one defined on fuel/chanConfig.json).
+### Testnet deployments:
 
-Visit http://localhost:3000.
+1. Generate a testnet wallet; you can follow the steps [here](https://fuellabs.github.io/fuel-docs/master/developer-quickstart.html#deploy-the-contract)
 
-**For testnet deployments**:
-- Generate a testnet wallet first (https://fuellabs.github.io/fuel-docs/master/developer-quickstart.html#deploy-the-contract)
-- Run `yarn fuel:deploy:testnet`.
-- It will prompt you to sign the tx. You can do it with:
-
-```bash
-# Account index 
-forc wallet sign --id MESSAGE_TO_SIGN --account-index 0
-# In the docs they say to use forc wallet sign` + `[message to sign, without brackets]` + `[the account number, without brackets]`
-# but it seems it was for an older version
+2. Deploy the example contract
+```
+yarn fuel:deploy:testnet
 ```
 
-- Update .env.development
+The command will prompt you to sign the transaction. You can do it with:
+
+```
+forc wallet sign --id MESSAGE_TO_SIGN --account-index 0
+```
+
+3. Update .env.development
   - NEXT_PUBLIC_NETWORK=testnet
   - NEXT_PUBLIC_WALLET_SECRET (you can use the same account used for the deployment. Get the secret with `forc wallet export --account-index 0`)
   - NEXT_PUBLIC_CONTRACT_ID (displayed after deploying the contract)
 
-- `yarn next:contract:typings`
-- `yarn next:start`
+4. Create the contract typings for the front-end app
+```
+yarn next:contract:typings
+```
 
-- Visit http://localhost:3000.
-
----
-
-## Features
-
-- yarn to allow monorepos
-- download @types automatically with the yarn plugin
-- yarn scripts helpers (next/fuel start, etc)
-- TW / Daisy + conf
-- eslint / prettier
+5. Start your app and visit http://localhost:3000
+```
+yarn next:start
+```
