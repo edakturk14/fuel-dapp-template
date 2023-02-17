@@ -9,7 +9,7 @@
     ]
   },
   "scripts": {
-    "next:start": "yarn workspace @fuel-starter-kit/nextjs contract:typings & yarn workspace @fuel-starter-kit/nextjs dev",
+    "next:start": "yarn workspace @fuel-starter-kit/nextjs contract:typings && yarn workspace @fuel-starter-kit/nextjs dev",
     "fuel:start": "yarn workspace @fuel-starter-kit/fuel dev",
     "fuel:chain": "yarn workspace @fuel-starter-kit/fuel chain",
     "fuel:build": "yarn workspace @fuel-starter-kit/fuel build",
