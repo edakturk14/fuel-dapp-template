@@ -41,41 +41,47 @@ yarn install
 yarn fuel:chain
 ```
 
-2. Deploy the example contract locally. Make sure to save the Contract ID.
+2. Deploy the example contract locally. You'll see the contract ID on the terminal, make sure to save it.
 ```
 yarn fuel:deploy:local
 ```
 
-3. Update Contract ID (result from fuel:deploy:local) in `.env.development`.
+3. Update the Contract ID on `.env.development` in the nextjs folder.
+```
+# The target contract you want to interact with
+NEXT_PUBLIC_CONTRACT_ID=<YOUR_CONTRACT_ID>
+```
 
-4. Start your app and visit http://localhost:3000
+4. Start your app & visit http://localhost:3000
 ```
 yarn next:start
 ```
 
 ### Testnet deployments:
 
-1. Generate a testnet wallet; you can follow the steps [here](https://fuellabs.github.io/fuel-docs/master/developer-quickstart.html#deploy-the-contract)
+1. For a testnet deployment, you'll need a tesnet account. To generate a testnet wallet, follow the steps [here](https://fuellabs.github.io/fuel-docs/master/developer-quickstart.html#deploy-the-contract)
 
-2. Deploy the example contract
+2. Deploy the example contract to the Fuel Beta-2 testnet
 ```
 yarn fuel:deploy:testnet
 ```
 
-The command will prompt you to sign the transaction. To get a signature open a another termainal and use the following command to generate a signature:
+The command will prompt you to sign the transaction. To get a signature, open a another terminal and use the following command to generate a signature:
 
 ```
 forc-wallet sign TRANSACTION_ID ACCOUNT_INDEX
 ```
 
-Copy the signature from the previous terminal and paste it into your current terminal window and press enter to execute the signature.If everything goes as expected, the contract should be deployed successfully, and you should see the contract ID and block number displayed on the screen.
+Copy the signature from the previous terminal and paste it into your current terminal window. Then, press enter to execute the signature.
 
-3. Update .env.development
+If everything goes well, the contract will be deployed to the testnet, and you'll see the contract ID and block number displayed on the terminal.
+
+3. Update `.env.development` in the nextjs folder.
   - NEXT_PUBLIC_NETWORK=testnet
   - NEXT_PUBLIC_WALLET_SECRET (you can use the same account used for the deployment. Get the secret with `forc wallet export --account-index 0`)
   - NEXT_PUBLIC_CONTRACT_ID (you will need to add `0x` in the beginning of the contract-id)
 
-4. Start your app and visit http://localhost:3000
+4. Start your app & visit http://localhost:3000
 ```
 yarn next:start
 ```
