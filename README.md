@@ -1,4 +1,4 @@
-# Fuel Starter Kit ⛽🌴
+# Fuel dApp Template ⛽🌴
 
 The best way to get started building decentralized applications on Fuel! Built using NextJS, DaisyUI, Forc, Sway and Typescript.
 
