@@ -2,8 +2,8 @@
 
 The best way to get started building decentralized applications on Fuel! Built using NextJS, DaisyUI, Forc, Sway and Typescript.
 
-- Easily deploy your smart contract in Sway to your local toolchain or the Fuel Beta-2 testnet
 - Out-of-the-box local toolchain & wallet setup
+- Easily deploy your smart contract in Sway to your local toolchain or the Fuel Beta-2 testnet
 - Customizable frontend built using Tailwind CSS
 
 ## QuickStart
