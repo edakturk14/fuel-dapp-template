@@ -6,6 +6,9 @@ The best way to get started building decentralized applications on Fuel! Built u
 - Easily deploy your smart contract in Sway to your local toolchain or the Fuel Beta-2 testnet
 - Customizable frontend built using Tailwind CSS
 
+https://user-images.githubusercontent.com/22100698/224391910-c9f99bcd-0362-4660-b313-5925b0843804.mp4
+
+
 ## QuickStart
 
 ### Prerequisites
