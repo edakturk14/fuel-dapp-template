@@ -116,7 +116,7 @@ If everything goes well, the contract will be deployed to the testnet, and you'l
 yarn next:start
 ```
 
-### Contributing
+## Contributing
 We welcome contributions to Fuel dApp Template ⛽🌴!
 
 Please see [CONTRIBUTING.MD](https://github.com/edakturk14/fuel-dapp-template/blob/main/CONTRIBUTING.md) for more information and guidelines for contributing to Fuel dApp Template.
