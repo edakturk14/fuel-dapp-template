@@ -119,4 +119,4 @@ yarn next:start
 ### Contributing
 We welcome contributions to Fuel dApp Template ⛽🌴!
 
-Please see CONTRIBUTING.MD for more information and guidelines for contributing to Fuel dApp Template.
+Please see [CONTRIBUTING.MD](https://github.com/edakturk14/fuel-dapp-template/blob/main/CONTRIBUTING.md) for more information and guidelines for contributing to Fuel dApp Template.
