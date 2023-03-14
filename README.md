@@ -1,6 +1,6 @@
 # Fuel dApp Template ⛽🌴
 
-Quickly get started building decentralized applications on Fuel! Built using NextJS, DaisyUI, Forc, Sway and Typescript.
+Fuel dApp Template is a developer-friendly starter kit that enables you to quickly build decentralized applications on the Fuel network! Built using NextJS, DaisyUI, Forc, Sway and Typescript.
 
 - Out-of-the-box local toolchain & wallet setup
 - Easily deploy your smart contract in Sway to your local toolchain or the Fuel Beta-2 testnet
@@ -18,6 +18,8 @@ https://user-images.githubusercontent.com/22100698/224391910-c9f99bcd-0362-4660-
   * [Testnet Deployments](#Testnet-Deployments)
 
 # Requirements
+
+Before starting to use the Fuel dApp Template, make sure you have the following requirements installed on your system:
 
 - [Node.js](https://nodejs.org/en/) v16.15.0 or newer
 - [Yarn](https://www.npmjs.com/package/yarn)
