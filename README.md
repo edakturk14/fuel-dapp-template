@@ -2,13 +2,14 @@
 
 Fuel dApp Template is a developer-friendly starter kit that enables you to quickly build decentralized applications on the Fuel network! Built using NextJS, DaisyUI, Forc, Sway and Typescript.
 
+https://user-images.githubusercontent.com/22100698/224391910-c9f99bcd-0362-4660-b313-5925b0843804.mp4
+
+### Features
 - Out-of-the-box local toolchain & wallet setup
 - Easily deploy your smart contract in Sway to your local toolchain or the Fuel Beta-2 testnet
 - Customizable frontend built using Tailwind CSS
 
-https://user-images.githubusercontent.com/22100698/224391910-c9f99bcd-0362-4660-b313-5925b0843804.mp4
-
-# Contents
+## Contents
 
 - [Requirements](#requirements)
 - [Quickstart](#Quickstart)
@@ -16,8 +17,9 @@ https://user-images.githubusercontent.com/22100698/224391910-c9f99bcd-0362-4660-
   * [Getting started](#Getting-started)
   * [Local Deployments](#Local-Deployments)
   * [Testnet Deployments](#Testnet-Deployments)
+- [Contributing](#Contributing)
 
-# Requirements
+## Requirements
 
 Before starting to use the Fuel dApp Template, make sure you have the following requirements installed on your system:
 
@@ -26,9 +28,9 @@ Before starting to use the Fuel dApp Template, make sure you have the following 
 - [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
 - Rust, Cargo and Forc (explained in the installation section)
 
-# QuickStart
+## QuickStart
 
-## Installation
+### Installation
 
 To install the template, follow these steps:
 
@@ -45,7 +47,7 @@ The Fuel toolchain is required to compile Sway contracts and run them on the Fue
     `fuelup toolchain install beta-2`
 The beta-2 network is the second public testnet for the Fuel network. It is used to test and deploy smart contracts.
 
-## Getting Started
+### Getting Started
 
 Clone this repo & install dependencies:
 ```
@@ -54,7 +56,7 @@ cd fuel-starter-kit
 yarn install
 ```
 
-## Local Deployments
+### Local Deployments
 
 To deploy the template locally, follow these steps:
 
@@ -81,7 +83,7 @@ NEXT_PUBLIC_CONTRACT_ID=<YOUR_CONTRACT_ID>
 yarn next:start
 ```
 
-## Testnet Deployments
+### Testnet Deployments
 
 To deploy the template to the Fuel Beta-2 testnet, follow these steps:
 
@@ -113,3 +115,8 @@ If everything goes well, the contract will be deployed to the testnet, and you'l
 ```
 yarn next:start
 ```
+
+### Contributing
+We welcome contributions to Fuel dApp Template ⛽🌴!
+
+Please see CONTRIBUTING.MD for more information and guidelines for contributing to Fuel dApp Template.
