@@ -8,7 +8,6 @@ Quickly get started building decentralized applications on Fuel! Built using Nex
 
 https://user-images.githubusercontent.com/22100698/224391910-c9f99bcd-0362-4660-b313-5925b0843804.mp4
 
-
 # Contents
 
 - [Requirements](#requirements)
