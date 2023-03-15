@@ -3,6 +3,7 @@ import { ContractAbi, ContractAbi__factory } from "../contracts";
 import { BN, Wallet } from "fuels";
 import { PageHeader } from "../components/PageHeader";
 import { PageFooter } from "../components/PageFooter";
+import { ResourcesLinks } from "../components/ResourcesLinks";
 
 interface NetworkConfig {
   [key: string]: {
@@ -74,7 +75,7 @@ export default function Home() {
   return (
     <div className="px-8 flex flex-col min-h-screen">
       <PageHeader />
-      <main className="flex items-center flex-col py-16">
+      <main className="flex items-center flex-col py-16 flex-grow">
         {!contract && (
           <div className="alert alert-error max-w-sm mb-4">
             <div>
@@ -105,6 +106,7 @@ export default function Home() {
             </div>
           </div>
         )}
+        <ResourcesLinks />
       </main>
       <PageFooter />
     </div>

@@ -17,6 +17,16 @@ export const PageHeader = () => {
       <ul className="flex gap-6 ">
         <li>
           <a
+            href="https://www.fuel.network/"
+            target="_blank"
+            rel="noreferrer"
+            className="link-hover"
+          >
+            Fuel Network
+          </a>
+        </li>
+        <li>
+          <a
             href="https://fuellabs.github.io/block-explorer-v2/"
             target="_blank"
             rel="noreferrer"
