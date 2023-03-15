@@ -3,7 +3,7 @@ import { GithubIcon } from "./icons/GithubIcon";
 
 export const PageHeader = () => {
   return (
-    <div className="flex gap-8 py-4 items-center">
+    <div className="flex flex-col md:flex-row gap-8 py-4 items-center">
       <p className="text-center text-2xl text-primary">
         <Image
           className="inline-block pr-2"
@@ -14,7 +14,7 @@ export const PageHeader = () => {
         />
         Fuel App
       </p>
-      <ul className="flex gap-6 ">
+      <ul className="flex gap-6">
         <li>
           <a
             href="https://www.fuel.network/"
