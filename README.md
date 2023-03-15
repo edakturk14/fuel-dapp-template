@@ -17,6 +17,9 @@ https://user-images.githubusercontent.com/22100698/224391910-c9f99bcd-0362-4660-
   * [Getting started](#Getting-started)
   * [Local Deployments](#Local-Deployments)
   * [Testnet Deployments](#Testnet-Deployments)
+- [Modular Blockchains & Fuel](#Modular-Blockchains-&-Fuel)
+  * [Modular Blockchains](#Modular-Blockchains)
+  * [Fuel](#Fuel)
 - [Contributing](#Contributing)
 
 ## Requirements
@@ -115,6 +118,20 @@ If everything goes well, the contract will be deployed to the testnet, and you'l
 ```
 yarn next:start
 ```
+
+## Modular Blockchains & Fuel
+
+### Modular Blockchains
+
+A modular blockchain is a blockchain architecture that breaks down the blockchain into smaller modules, each specialized for certain functions. This approach allows developers to build customizable, scalable, and flexible blockchain systems by combining modules in various ways, similar to building with Lego blocks. With separate layers, modular blockchains provide scalability and flexibility. The resources in each module are optimized for a specific operation, leading to increased efficiency and improved scalability.
+
+### Fuel
+
+Fuel is building fastest Execution Layer for the modular blockchain architecture.
+
+Fuel also offers a comprehensive suite of developer tools and resources, focused on providing the best possible developer experience, including the Sway the programming language and Fuel orchestrator (Forc) which is the toolchain.
+
+Fuel offers several key features that set it apart from other blockchain platforms. One of its standout features is its own Virtual Machine, the FuelVM, which is designed to address the limitations of the EVM. Additionally, Fuel's UTXO model enables parallel transaction execution, allowing it to execute multiple threads simultaneously. Finally, Fuel's modular execution layer provides the flexibility to be deployed in a variety of settings, allowing developers to choose the data availability that best suits their use case.
 
 ## Contributing
 We welcome contributions to Fuel dApp Template ⛽🌴!
