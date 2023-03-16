@@ -14,7 +14,7 @@ export const PageHeader = () => {
         />
         Fuel App
       </p>
-      <ul className="flex gap-6 ml-auto">
+      <ul className="flex gap-6 md:ml-auto">
         <li>
           <a
             href="https://www.fuel.network/"
