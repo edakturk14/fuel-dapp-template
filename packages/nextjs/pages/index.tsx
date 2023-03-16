@@ -1,7 +1,9 @@
 import { useEffect, useState } from "react";
-import Image from "next/image";
 import { ContractAbi, ContractAbi__factory } from "../contracts";
 import { BN, Wallet } from "fuels";
+import { PageHeader } from "../components/PageHeader";
+import { PageFooter } from "../components/PageFooter";
+import { ResourcesLinks } from "../components/ResourcesLinks";
 
 interface NetworkConfig {
   [key: string]: {
@@ -71,19 +73,9 @@ export default function Home() {
   };
 
   return (
-    <div className="px-8">
-      <main className="flex items-center flex-col py-16">
-        <h1 className="text-center my-12 text-4xl">
-          <Image
-            className="inline-block pr-2"
-            src="/logo.svg"
-            alt="Fuel Logo"
-            width={34}
-            height={40}
-          />
-          Fuel App
-        </h1>
-
+    <div className="px-8 flex flex-col min-h-screen">
+      <PageHeader />
+      <main className="flex items-center flex-col py-16 flex-grow">
         {!contract && (
           <div className="alert alert-error max-w-sm mb-4">
             <div>
@@ -95,9 +87,13 @@ export default function Home() {
           </div>
         )}
 
-        <p>Current counter value: {counter}</p>
+        <h2 className="text-2xl font-bold text-primary mb-2">
+          Interact with your Fuel Contract
+        </h2>
+        <p>Current counter value</p>
+        <p className="text-4xl font-bold">{counter}</p>
         <button
-          className={`mt-4 btn btn-primary ${isLoadingTx ? "loading" : ""}`}
+          className={`mt-6 btn btn-primary ${isLoadingTx ? "loading" : ""}`}
           onClick={incrementCounter}
         >
           Increment Counter
@@ -110,7 +106,9 @@ export default function Home() {
             </div>
           </div>
         )}
+        <ResourcesLinks />
       </main>
+      <PageFooter />
     </div>
   );
 }
