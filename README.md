@@ -37,7 +37,7 @@ Before starting to use the Fuel dApp Template, make sure you have the following 
 
 To install the template, follow these steps:
 
-1. Install the Rust toolchain by following the steps [here](https://fuellabs.github.io/sway/v0.24.3/introduction/installation.html#dependencies). Rust is used to build the Sway smart contracts used in the Fuel dApp template.
+1. Install the **Rust toolchain** by following the steps [here](https://fuellabs.github.io/sway/v0.24.3/introduction/installation.html#dependencies). Rust is used to build the Sway smart contracts used in the Fuel dApp template.
 
 2. The **Fuel toolchain** is required to compile Sway contracts & run them on the FuelVM. Install the Fuel toolchain by the command below; you can also find the steps [here](https://github.com/FuelLabs/fuelup)
 
@@ -48,7 +48,11 @@ The Fuel toolchain is required to compile Sway contracts and run them on the Fue
 
 3. The [beta-2 network](https://fuellabs.github.io/fuel-docs/master/networks/beta-1.html) is the second public Fuel testnet. Install the beta-2 toolchain by using the following command:
     `fuelup toolchain install beta-2`
-The beta-2 network is the second public testnet for the Fuel network. It is used to test and deploy smart contracts.
+It is used to test and deploy smart contracts.
+
+4. Install the Fuel Wallet by following the steps [here](https://wallet.fuel.network/docs/install/).
+
+5. Get some Testnet tokens from [the testnet faucet](https://faucet-beta-2.fuel.network/)
 
 ### Getting Started
 
