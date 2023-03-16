@@ -9,7 +9,7 @@ export const ResourcesLinks = () => {
         >
           <div className="card-body">
             <h2 className="card-title">Fuel Book {"->"}</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <p>Reference document for the Fuel Network</p>
           </div>
         </a>
       </div>
@@ -22,7 +22,7 @@ export const ResourcesLinks = () => {
         >
           <div className="card-body">
             <h2 className="card-title">Sway Book {"->"}</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <p>Domain-specific language for the FuelVM</p>
           </div>
         </a>
       </div>
@@ -35,7 +35,7 @@ export const ResourcesLinks = () => {
         >
           <div className="card-body">
             <h2 className="card-title">Fuel Typescript SDK {"->"}</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <p>TypeScript library to build dApps on Fuel</p>
           </div>
         </a>
       </div>
@@ -48,7 +48,7 @@ export const ResourcesLinks = () => {
         >
           <div className="card-body">
             <h2 className="card-title">Blog post {"->"}</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <p>Modular Blockchains and Intro to Fuel</p>
           </div>
         </a>
       </div>
