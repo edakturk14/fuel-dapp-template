@@ -90,6 +90,8 @@ NEXT_PUBLIC_CONTRACT_ID=<YOUR_CONTRACT_ID>
 yarn next:start
 ```
 
+5. To interact with the smart contract, you need to add the local network to your Fuel Browser Wallet. Open your Fuel Browser Wallet extension and click "Add new network." Input a name and the URL: `http://127.0.0.1:4000/graphql`.
+
 ### Testnet Deployments
 
 To deploy the template to the Fuel Beta-2 testnet, follow these steps:
