@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { ContractAbi,ContractAbi__factory } from "../contracts";
+import { ContractAbi, ContractAbi__factory } from "../contracts";
 import { BN } from "fuels";
 import { PageHeader } from "../components/PageHeader";
 import { PageFooter } from "../components/PageFooter";
@@ -33,10 +33,11 @@ declare global {
   }
 }
 
-const CONTRACT_ID = process.env.NEXT_PUBLIC_CONTRACT_ID ?? "";
+const CONTRACT_ID =
+  "0xe7e3f344f1d1b0b3b8f77021de6e96e4089e5c976462e7a2726d4892a5669993"; //process.env.NEXT_PUBLIC_CONTRACT_ID ?? "";
 
 export default function Home() {
-  const [counter, setCounter] = useState(0);
+  const [counter, setCounter] = useState<number>(0);
   const [connected, setConnected] = useState<boolean>(false);
   const [account, setAccount] = useState<string>("");
   const [isLoadingTx, setIsLoadingTx] = useState(false);
@@ -45,7 +46,7 @@ export default function Home() {
   useEffect(() => {
     setTimeout(() => {
       checkConnection();
-      setIsLoadingTx(true);
+      setIsLoadingTx(false);
     }, 200);
     if (connected) getCounter();
   }, [connected]);
@@ -87,24 +88,22 @@ export default function Home() {
     setCounter(Number(new BN(value)));
   }
 
-  const incrementCounter = async () => {
+  async function incrementCounter() {
     const wallet = await window.fuel.getWallet(account);
     const contract = ContractAbi__factory.connect(CONTRACT_ID, wallet);
-    //let data: { value: BN };
+    console.log(contract);
     try {
       await contract.functions.increment().txParams({ gasPrice: 1 }).call();
     } catch (e) {
       console.error("~~ increment counter tx error", e);
-      setIsLoadingTx(false);
       // @ts-ignore
       const errorMsg = e?.response?.errors?.[0]?.message ?? "Unknown error";
       setErroMessage(errorMsg);
       return;
     }
-    //setCounter(Number(data.value));
     setIsLoadingTx(false);
     setErroMessage("");
-  };
+  }
 
   return (
     <div className="px-8 flex flex-col min-h-screen">
