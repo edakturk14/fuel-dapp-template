@@ -33,8 +33,7 @@ declare global {
   }
 }
 
-const CONTRACT_ID =
-  "0xe7e3f344f1d1b0b3b8f77021de6e96e4089e5c976462e7a2726d4892a5669993"; //process.env.NEXT_PUBLIC_CONTRACT_ID ?? "";
+const CONTRACT_ID = process.env.NEXT_PUBLIC_CONTRACT_ID ?? "";
 
 export default function Home() {
   const [counter, setCounter] = useState<number>(0);
@@ -42,14 +41,6 @@ export default function Home() {
   const [account, setAccount] = useState<string>("");
   const [isLoadingTx, setIsLoadingTx] = useState(false);
   const [errorMessage, setErroMessage] = useState("");
-
-  useEffect(() => {
-    setTimeout(() => {
-      checkConnection();
-      setIsLoadingTx(false);
-    }, 200);
-    if (connected) getCounter();
-  }, [connected]);
 
   async function connect() {
     if (window.fuel) {
@@ -71,29 +62,17 @@ export default function Home() {
     }
   }
 
-  async function checkConnection() {
-    if (window.fuel && window.fuel.isConnected) {
-      const isConnected = await window.fuel.isConnected();
-      if (isConnected) {
-        const accounts = await window.fuel.accounts();
-        setAccount(accounts[0]);
-        setConnected(true);
-      }
-    }
-  }
-  async function getCounter() {
-    const wallet = await window.fuel.getWallet(account);
-    const contract = ContractAbi__factory.connect(CONTRACT_ID, wallet);
-    const { value } = await contract.functions.counter().get();
-    setCounter(Number(new BN(value)));
-  }
-
   async function incrementCounter() {
     const wallet = await window.fuel.getWallet(account);
     const contract = ContractAbi__factory.connect(CONTRACT_ID, wallet);
+    let data: { value: BN };
     console.log(contract);
+    console.log(wallet);
     try {
-      await contract.functions.increment().txParams({ gasPrice: 1 }).call();
+      data = await contract.functions
+        .increment()
+        .txParams({ gasPrice: 1 })
+        .call();
     } catch (e) {
       console.error("~~ increment counter tx error", e);
       // @ts-ignore
@@ -101,6 +80,7 @@ export default function Home() {
       setErroMessage(errorMsg);
       return;
     }
+    setCounter(Number(data.value));
     setIsLoadingTx(false);
     setErroMessage("");
   }
