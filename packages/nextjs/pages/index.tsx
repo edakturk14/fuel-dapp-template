@@ -105,6 +105,13 @@ export default function Home() {
               >
                 Increment Counter
               </button>
+              {errorMessage && (
+                <div className="alert alert-error max-w-sm mt-4">
+                  <div>
+                    <span>{errorMessage}</span>
+                  </div>
+                </div>
+              )}
               <button className="mt-6 btn btn-primary" onClick={disconnect}>
                 Disconnect
               </button>
