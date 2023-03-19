@@ -1,31 +1,9 @@
 import { useEffect, useState } from "react";
-import { ContractAbi, ContractAbi__factory } from "../contracts";
+import { ContractAbi__factory } from "../contracts";
 import { BN } from "fuels";
 import { PageHeader } from "../components/PageHeader";
 import { PageFooter } from "../components/PageFooter";
 import { ResourcesLinks } from "../components/ResourcesLinks";
-
-/*
-interface NetworkConfig {
-  [key: string]: {
-    provider: string;
-  };
-}
-const AVAILABLE_NETWORKS: NetworkConfig = {
-  localhost: {
-    provider: "http://127.0.0.1:4000/graphql",
-  },
-  testnet: {
-    provider: "https://node-beta-2.fuel.network/graphql",
-  },
-};
-// Selected network
-const selectedNetwork: keyof NetworkConfig =
-  process.env.NEXT_PUBLIC_NETWORK ?? "localhost";
-const network = AVAILABLE_NETWORKS[selectedNetwork];
-
-//const WALLET_SECRET = process.env.NEXT_PUBLIC_WALLET_SECRET ?? "";
-*/
 
 declare global {
   interface Window {
@@ -41,6 +19,22 @@ export default function Home() {
   const [account, setAccount] = useState<string>("");
   const [isLoadingTx, setIsLoadingTx] = useState(false);
   const [errorMessage, setErroMessage] = useState("");
+
+  useEffect(() => {
+    setTimeout(() => {
+      checkConnection();
+      setIsLoadingTx(false);
+    }, 200);
+    if (connected) {
+      const getCounterValue = async () => {
+        const wallet = await window.fuel.getWallet(account);
+        const contract = ContractAbi__factory.connect(CONTRACT_ID, wallet);
+        const { value } = await contract.functions.counter().get();
+        setCounter(Number(value));
+      };
+      getCounterValue();
+    }
+  }, [account, connected]);
 
   async function connect() {
     if (window.fuel) {
@@ -62,6 +56,15 @@ export default function Home() {
     }
   }
 
+  async function checkConnection() {
+    const isConnected = await window.fuel.isConnected();
+    if (isConnected) {
+      const accounts = await window.fuel.accounts();
+      setAccount(accounts[0]);
+      setConnected(true);
+    }
+  }
+
   async function incrementCounter() {
     const wallet = await window.fuel.getWallet(account);
     const contract = ContractAbi__factory.connect(CONTRACT_ID, wallet);
@@ -73,6 +76,7 @@ export default function Home() {
         .increment()
         .txParams({ gasPrice: 1 })
         .call();
+        await contract.functions.increment().txParams({ gasPrice: 1 }).call();
     } catch (e) {
       console.error("~~ increment counter tx error", e);
       // @ts-ignore
