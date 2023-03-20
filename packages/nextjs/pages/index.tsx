@@ -29,7 +29,11 @@ export default function Home() {
       const getCounterValue = async () => {
         const wallet = await window.fuel.getWallet(account);
         const contract = ContractAbi__factory.connect(CONTRACT_ID, wallet);
+        console.log(CONTRACT_ID);
+        console.log(wallet);
+        console.log(contract.id);
         const { value } = await contract.functions.counter().get();
+        console.log(value);
         setCounter(Number(value));
       };
       getCounterValue();
@@ -57,7 +61,7 @@ export default function Home() {
   }
 
   async function checkConnection() {
-    const isConnected = await window.fuel.isConnected();
+    const isConnected = await window.fuel?.isConnected();
     if (isConnected) {
       const accounts = await window.fuel.accounts();
       setAccount(accounts[0]);
@@ -69,8 +73,6 @@ export default function Home() {
     const wallet = await window.fuel.getWallet(account);
     const contract = ContractAbi__factory.connect(CONTRACT_ID, wallet);
     let data: { value: BN };
-    console.log(contract);
-    console.log(wallet);
     try {
       data = await contract.functions
         .increment()
