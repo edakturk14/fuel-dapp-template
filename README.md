@@ -1,6 +1,6 @@
 # Fuel dApp Template ⛽🌴
 
-Fuel dApp Template is a developer-friendly starter kit that enables you to quickly build decentralized applications on the Fuel network! Built using NextJS, DaisyUI, Forc, Sway and Typescript.
+The Fuel dApp Template is a developer-friendly starter kit for quickly building decentralized applications on the Fuel network! This template is built using NextJS, DaisyUI, Forc, Sway, and TypeScript.
 
 ### Features
 - Out-of-the-box local toolchain & wallet setup
@@ -22,7 +22,7 @@ Fuel dApp Template is a developer-friendly starter kit that enables you to quick
 
 ## Requirements
 
-Before starting to use the Fuel dApp Template, make sure you have the following requirements installed on your system:
+Before using the Fuel dApp Template, ensure you have the following installed on your system:
 
 - [Node.js](https://nodejs.org/en/) v16.15.0 or newer
 - [Yarn](https://www.npmjs.com/package/yarn)
@@ -42,11 +42,9 @@ To install the template, follow these steps:
 ```sh
 curl --proto '=https' --tlsv1.2 -sSf https://install.fuel.network/fuelup-init.sh | sh
 ```
-The Fuel toolchain is required to compile Sway contracts and run them on the FuelVM.
 
-3. The [beta-3 network](https://fuelbook.fuel.network/master/networks/beta-3.html) is the third public Fuel testnet. Install the beta-3 toolchain by using the following command:
+3. Install the beta-3 network toolchain to test and deploy smart contracts using the following command:
     `fuelup toolchain install beta-3`
-It is used to test and deploy smart contracts.
 
 4. Install the Fuel Wallet by following the steps [here](https://wallet.fuel.network/docs/install/).
 
@@ -54,7 +52,7 @@ It is used to test and deploy smart contracts.
 
 ### Getting Started
 
-Clone this repo & install dependencies:
+Clone this repo and install dependencies:
 ```
 git clone https://github.com/edakturk14/fuel-starter-kit.git
 cd fuel-starter-kit
@@ -65,17 +63,16 @@ yarn install
 
 To deploy the template locally, follow these steps:
 
-1. Start the fuel chain locally
+1. Start the Fuel chain locally
 ```
 yarn fuel:chain
 ```
-This will start the Fuel chain on your local machine.
 
 2. Deploy the example contract locally by running the following command:
 ```
 yarn fuel:deploy:local
 ```
-This will deploy an example smart contract to your local Fuel chain. The contract ID will be displayed in the terminal, and you will need to save it for use in later steps.
+This will deploy an example smart contract to your local Fuel chain. Take note of the contract ID displayed in the terminal to use in later steps.
 
 3. Update the Contract ID on `.env.development` in the NextJS folder. This is necessary so that the frontend can communicate with the deployed smart contract.
 ```
@@ -83,7 +80,7 @@ This will deploy an example smart contract to your local Fuel chain. The contrac
 NEXT_PUBLIC_CONTRACT_ID=<YOUR_CONTRACT_ID>
 ```
 
-4. Start your app & visit http://localhost:3000
+4. Start your app and visit http://localhost:3000
 ```
 yarn next:start
 ```
@@ -94,7 +91,7 @@ If all goes well you should be able to connect your wallet to website and start 
 
 ### Testnet Deployments
 
-To deploy the template to the Fuel 3 testnet, follow these steps:
+To deploy the template to the Fuel Beta-3 testnet, follow these steps:
 
 1. For a testnet deployment, you'll need a tesnet account. To generate a testnet wallet, follow the steps [here](https://fuellabs.github.io/fuel-docs/master/developer-quickstart.html#deploy-the-contract)
 
@@ -127,9 +124,11 @@ yarn next:start
 
 ## Modular Blockchains & Fuel
 
+You can checkout this [blog post](https://eda.hashnode.dev/modular-blockchains-getting-started-with-fuel) for an intro to Modular Blockchains and Getting started w/Fuel.
+
 ### Modular Blockchains
 
-A modular blockchain is a blockchain architecture that breaks down the blockchain into smaller modules, each specialized for certain functions. This approach allows developers to build customizable, scalable, and flexible blockchain systems by combining modules in various ways, similar to building with Lego blocks. With separate layers, modular blockchains provide scalability and flexibility. The resources in each module are optimized for a specific operation, leading to increased efficiency and improved scalability.
+Modular blockchains feature an architecture that separates the blockchain into smaller, specialized modules. This approach allows developers to create customizable, scalable, and flexible blockchain systems by combining modules in various configurations, much like building with Lego blocks. With distinct layers, modular blockchains offer improved scalability and flexibility. Each module's resources are optimized for specific operations, enhancing efficiency and scalability.
 
 ### Fuel
 
@@ -140,6 +139,7 @@ Fuel also offers a comprehensive suite of developer tools and resources, focused
 Fuel offers several key features that set it apart from other blockchain platforms. One of its standout features is its own Virtual Machine, the FuelVM, which is designed to address the limitations of the EVM. Additionally, Fuel's UTXO model enables parallel transaction execution, allowing it to execute multiple threads simultaneously. Finally, Fuel's modular execution layer provides the flexibility to be deployed in a variety of settings, allowing developers to choose the data availability that best suits their use case.
 
 ## Contributing
+
 We welcome contributions to Fuel dApp Template ⛽🌴!
 
 Please see [CONTRIBUTING.MD](https://github.com/edakturk14/fuel-dapp-template/blob/main/CONTRIBUTING.md) for more information and guidelines for contributing to Fuel dApp Template.
