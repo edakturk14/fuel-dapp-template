@@ -6,6 +6,6 @@
     "build": "cd contract && yarn exec forc build",
     "chain": "fuel-core run --ip 127.0.0.1 --port 4000 --chain ./chainConfig.json --db-path ./.fueldb",
     "deploy:local": "cd contract && yarn exec forc deploy --url localhost:4000 --unsigned",
-    "deploy:testnet": "cd contract && yarn exec forc deploy --url node-beta-2.fuel.network/graphql --gas-price 1"
+    "deploy:testnet": "cd contract && yarn exec forc deploy --url node-beta-3.fuel.network/graphql --gas-price 1"
   }
 }

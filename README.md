@@ -4,7 +4,7 @@ Fuel dApp Template is a developer-friendly starter kit that enables you to quick
 
 ### Features
 - Out-of-the-box local toolchain & wallet setup
-- Easily deploy your smart contract in Sway to your local toolchain or the Fuel Beta-2 testnet
+- Easily deploy your smart contract in Sway to your local toolchain or the Fuel Beta-3 testnet
 - Customizable frontend built using Tailwind CSS
 
 ## Contents
@@ -44,13 +44,13 @@ curl --proto '=https' --tlsv1.2 -sSf https://install.fuel.network/fuelup-init.sh
 ```
 The Fuel toolchain is required to compile Sway contracts and run them on the FuelVM.
 
-3. The [beta-2 network](https://fuellabs.github.io/fuel-docs/master/networks/beta-1.html) is the second public Fuel testnet. Install the beta-2 toolchain by using the following command:
-    `fuelup toolchain install beta-2`
+3. The [beta-3 network](https://fuelbook.fuel.network/master/networks/beta-3.html) is the third public Fuel testnet. Install the beta-3 toolchain by using the following command:
+    `fuelup toolchain install beta-3`
 It is used to test and deploy smart contracts.
 
 4. Install the Fuel Wallet by following the steps [here](https://wallet.fuel.network/docs/install/).
 
-5. Get some Testnet tokens from [the testnet faucet](https://faucet-beta-2.fuel.network/)
+5. Get some Testnet tokens from [the testnet faucet](https://faucet-beta-3.fuel.network/)
 
 ### Getting Started
 
@@ -94,16 +94,16 @@ If all goes well you should be able to connect your wallet to website and start 
 
 ### Testnet Deployments
 
-To deploy the template to the Fuel Beta-2 testnet, follow these steps:
+To deploy the template to the Fuel 3 testnet, follow these steps:
 
 1. For a testnet deployment, you'll need a tesnet account. To generate a testnet wallet, follow the steps [here](https://fuellabs.github.io/fuel-docs/master/developer-quickstart.html#deploy-the-contract)
 
-2. Deploy the example contract to the Fuel Beta-2 testnet
+2. Deploy the example contract to the Fuel Beta-3 testnet
 ```
 yarn fuel:deploy:testnet
 ```
 
-This will deploy the example smart contract to the beta-2 network. The command will prompt you to sign the transaction, which you can do using Forc.
+This will deploy the example smart contract to the Beta-3 network. The command will prompt you to sign the transaction, which you can do using Forc.
 
 To get a signature, open a another terminal and use the following command to generate a signature:
 
