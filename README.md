@@ -46,9 +46,7 @@ curl --proto '=https' --tlsv1.2 -sSf https://install.fuel.network/fuelup-init.sh
 3. Install the beta-3 network toolchain to test and deploy smart contracts using the following command:
     `fuelup toolchain install beta-3`
 
-4. Install the Fuel Wallet by following the steps [here](https://wallet.fuel.network/docs/install/).
-
-5. Get some Testnet tokens from [the testnet faucet](https://faucet-beta-3.fuel.network/)
+4. Install the Fuel Browser Wallet by following the steps [here](https://wallet.fuel.network/docs/install/).
 
 ### Getting Started
 
@@ -105,7 +103,7 @@ This will deploy the example smart contract to the Beta-3 network. The command w
 To get a signature, open a another terminal and use the following command to generate a signature:
 
 ```
-forc-wallet sign TRANSACTION_ID ACCOUNT_INDEX
+forc-wallet account <account_index> sign tx-id <transaction_id>
 ```
 
 Copy the signature from the previous terminal and paste it into your current terminal window. Then, press enter to execute the signature.
@@ -121,6 +119,10 @@ If everything goes well, the contract will be deployed to the testnet, and you'l
 ```
 yarn next:start
 ```
+
+5.  Connect your Fuel Browser wallet to the Beta-3 Network and get some Testnet tokens from [the faucet](https://faucet-beta-3.fuel.network/). To ensure that your wallet is connected to the Beta-3 Network you can check the network settings, the URL should be: `https://beta-3.fuel.network/graphql`
+
+Ready to use! Go ahead and make a transaction to increment counter.
 
 ## Modular Blockchains & Fuel
 
