@@ -29,11 +29,7 @@ export default function Home() {
       const getCounterValue = async () => {
         const wallet = await window.fuel.getWallet(account);
         const contract = ContractAbi__factory.connect(CONTRACT_ID, wallet);
-        console.log(CONTRACT_ID);
-        console.log(wallet);
-        console.log(contract.id);
         const { value } = await contract.functions.counter().get();
-        console.log(value);
         setCounter(Number(value));
       };
       getCounterValue();
@@ -78,7 +74,7 @@ export default function Home() {
         .increment()
         .txParams({ gasPrice: 1 })
         .call();
-        await contract.functions.increment().txParams({ gasPrice: 1 }).call();
+      await contract.functions.increment().txParams({ gasPrice: 1 }).call();
     } catch (e) {
       console.error("~~ increment counter tx error", e);
       // @ts-ignore
