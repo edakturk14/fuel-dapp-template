@@ -75,10 +75,8 @@ export default function Home() {
         .txParams({ gasPrice: 1 })
         .call();
       await contract.functions.increment().txParams({ gasPrice: 1 }).call();
-    } catch (e) {
+    } catch (e: any) {
       console.error("~~ increment counter tx error", e);
-      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-      // @ts-ignore
       const errorMsg = e?.response?.errors?.[0]?.message ?? "Unknown error";
       setErroMessage(errorMsg);
       return;
