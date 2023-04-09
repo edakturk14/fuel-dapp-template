@@ -86,7 +86,9 @@ yarn next:start
 
 5. To interact with the smart contract, you need to add the local network to your Fuel Browser Wallet. Open your Fuel Browser Wallet extension and click "Add new network." Input a name and the URL: `http://127.0.0.1:4000/graphql`.
 
-If all goes well you should be able to connect your wallet to website and start incrementing the counter.
+6. Get one of the Accounts private keys that were displayed when you started your localtoolchain, these accounts have the local funds by default. On your Fuel Wallet navigate to Accounts and then click "Add from private key."
+
+If all goes well you should be able to connect your wallet to website, have a wallet with testnet funds and you can start incrementing the counter.
 
 ### Testnet Deployments
 
