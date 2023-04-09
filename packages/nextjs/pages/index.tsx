@@ -74,7 +74,6 @@ export default function Home() {
         .increment()
         .txParams({ gasPrice: 1 })
         .call();
-      await contract.functions.increment().txParams({ gasPrice: 1 }).call();
     } catch (e: any) {
       console.error("~~ increment counter tx error", e);
       const errorMsg = e?.response?.errors?.[0]?.message ?? "Unknown error";
