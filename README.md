@@ -1,6 +1,6 @@
 # Fuel dApp Template ⛽🌴
 
-The Fuel dApp Template is a developer-friendly starter kit for quickly building decentralized applications on the Fuel network! This template is built using NextJS, DaisyUI, Forc, Sway, and TypeScript.
+The Fuel dApp Template is a developer-friendly starter kit for quickly building decentralized applications on the Fuel network! This template is built using NextJS, TypeScript, Tailwind CSS, Forc and Sway.
 
 - Out-of-the-box local toolchain & wallet setup
 - Easily deploy your smart contract in Sway to your local toolchain or the Fuel Beta-3 testnet
