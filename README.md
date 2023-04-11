@@ -7,6 +7,7 @@ The Fuel dApp Template is a developer-friendly starter kit for quickly building 
 - Customizable frontend built using Tailwind CSS
 
 📹 [Demo](https://www.youtube.com/watch?v=XwaAJEnnVcE&ab_channel=edatweets)
+📜 [Blog Post](https://eda.hashnode.dev/building-decentralized-applications-on-fuel)
 
 <img width="1398" alt="Screen Shot 2023-04-07 at 16 56 48" src="https://user-images.githubusercontent.com/22100698/230620996-9264f3d4-7e89-45ec-a3b3-8f05443982ba.png">
 
